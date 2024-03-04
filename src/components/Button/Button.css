@@ -1,0 +1,76 @@
+.uiXeny-button {
+    border-radius: 5px;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+    box-shadow: var(--box-shadow-button);
+    transition-duration: var(--component-transition-time);
+    margin: 8px;
+    width: fit-content;
+}
+
+.uiXeny-button:active {
+    box-shadow: var(--box-shadow-event-around-5px);
+}
+
+.uiXeny-button--default {
+    border: var(--component-border-1px);
+    background-color: white;
+}
+
+.uiXeny-button--default:hover {
+    border-color: var(--component-event-hover-color);
+    color: var(--component-event-hover-color);
+}
+
+.uiXeny-button--default:active {
+    border-color: var(--component-event-active-checked-color);
+    color: var(--component-event-active-checked-color);
+}
+
+.uiXeny-button:focus-visible {
+    box-shadow: var(--box-shadow-event-around-5px);
+}
+
+.uiXeny-button--primary {
+    background-color: var(--component-main-color);
+    color: white;
+}
+
+.uiXeny-button--primary:hover {
+    background-color: var(--component-event-hover-color);
+}
+
+.uiXeny-button--primary:active {
+    background-color: var(--component-event-active-color);
+}
+
+.uiXeny-button--link {
+    color: var(--component-main-color);
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.uiXeny-button--link:hover {
+    color: var(--component-event-hover-color);
+}
+
+.uiXeny-button--link:active {
+    color: var(--component-event-active-color);
+    box-shadow: none;
+}
+
+.uiXeny-button--sizeSmall {
+    padding: 4px 10px;
+    font-size: small;
+}
+
+.uiXeny-button--sizeMedium {
+    padding: 6px 16px;
+    font-size: medium;
+}
+
+.uiXeny-button--sizeLarge {
+    padding: 8px 22px;
+    font-size: large;
+}

@@ -1,0 +1,189 @@
+.check-box {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.uiXeny-checkBox {
+    display: inline-block;
+    position: relative;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    transition: var(--component-transition-time);
+}
+
+.check-box:focus {
+    outline: none;
+}
+
+.check-box:focus-visible + .uiXeny-checkBox {
+    box-shadow: var(--box-shadow-event-around-2px);
+}
+
+.check-box:enabled + .uiXeny-checkBox:hover {
+    border-color: var(--component-event-hover-color);
+}
+
+.check-box:enabled + .uiXeny-checkBox:active{
+    box-shadow: var(--box-shadow-event-around-2px);
+    border-color: var(--component-event-active-checked-color);
+}
+
+.uiXeny-checkBox--default, .uiXeny-checkBox--checkmark {
+    border: var(--component-border-2px);
+    border-radius: 3px;
+}
+
+.uiXeny-checkBox--default::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 7px;
+    height: 7px;
+    background-color: transparent;
+    border-radius: 1px;
+}
+
+.check-box:checked + .uiXeny-checkBox--default::before {
+    background-color: var(--component-event-active-checked-color);
+}
+
+.check-box:disabled + .uiXeny-checkBox {
+    border-color: var(--component-disabled-color);
+}
+
+.check-box:checked:disabled + .uiXeny-checkBox::before {
+    background-color: var(--component-disabled-color);
+}
+
+.check-box:disabled + .uiXeny-checkBox  + .uiXeny-checkBox__label {
+    color: var(--component-disabled-color);
+}
+
+.check-box:checked + .uiXeny-checkBox--checkmark {
+    background-image: url("../../assets/CheckBox/checkmark_blue.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.check-box:checked:disabled + .uiXeny-checkBox--checkmark {
+    background-image: url("../../assets/CheckBox/checkmark_gray.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.uiXeny-checkBox--checkmark--filled {
+    border: var(--component-border-2px);
+    background-color: transparent;
+    border-radius: 3px;
+}
+
+.check-box:checked + .uiXeny-checkBox--checkmark--filled:hover{
+    border-color: var(--component-event-hover-color);
+    background-color: var(--component-event-hover-color);
+}
+
+.check-box:checked + .uiXeny-checkBox--checkmark--filled {
+    background-image: url("../../assets/CheckBox/checkmark_white.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--component-event-active-checked-color);;
+    border-color: var(--component-event-active-checked-color);;
+}
+
+.check-box:checked:disabled + .uiXeny-checkBox--checkmark--filled {
+    background-image: url("../../assets/CheckBox/checkmark_white.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--component-disabled-color);
+    border-color: var(--component-disabled-color);
+}
+
+.uiXeny-checkBox--favoriteIcon {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    background-image: url("../../assets/CheckBox/favoriteIcon.svg");
+    background-repeat: no-repeat;
+    background-position: 49% 70%;
+    background-size: 80%;
+    border-radius: 22px;
+}
+
+.uiXeny-checkBox--favoriteIcon:hover {
+    background-image: url("../../assets/CheckBox/favoriteIcon_hover.svg");
+    background-repeat: no-repeat;
+}
+
+.check-box:checked + .uiXeny-checkBox--favoriteIcon {
+    background-image: url("../../assets/CheckBox/favoriteIcon_checked.svg");
+    background-repeat: no-repeat;
+}
+
+.check-box:checked + .uiXeny-checkBox--favoriteIcon:hover {
+    background-image: url("../../assets/CheckBox/favoriteIcon_checked_hover.svg");
+    background-repeat: no-repeat;
+}
+
+.check-box:disabled + .uiXeny-checkBox--favoriteIcon{
+    background-image: url("../../assets/CheckBox/favoriteIcon_disabled.svg");
+    background-repeat: no-repeat;
+}
+
+.check-box:checked:disabled + .uiXeny-checkBox--favoriteIcon {
+    background-image: url("../../assets/CheckBox/favoriteIcon_checked_disabled.svg");
+    background-repeat: no-repeat;
+}
+
+.check-box:focus-visible + .uiXeny-checkBox--favoriteIcon, .check-box:focus-visible + .uiXeny-checkBox--bookmarkIcon {
+    background-color: var(--checkbox-icon-event-background-color);
+    box-shadow: var(--box-shadow-event-around-5px);
+}
+
+.uiXeny-checkBox--bookmarkIcon {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    background-image: url("../../assets/CheckBox/bookmarkIcon.svg");
+    background-repeat: no-repeat;
+    background-position: 48% 50%;
+    background-size: 80%;
+    border-radius: 22px;
+}
+
+.uiXeny-checkBox--bookmarkIcon:hover {
+    background-image: url("../../assets/CheckBox/bookmarkIcon_hover.svg");
+    background-repeat: no-repeat;
+}
+
+.check-box:disabled + .uiXeny-checkBox--bookmarkIcon{
+    background-image: url("../../assets/CheckBox/bookmarkIcon_disabled.svg");
+    background-repeat: no-repeat;
+}
+
+.check-box:checked + .uiXeny-checkBox--bookmarkIcon {
+    background-image: url("../../assets/CheckBox/bookmarkIcon_checked.svg");
+    background-repeat: no-repeat;
+}
+
+.check-box:checked + .uiXeny-checkBox--bookmarkIcon:hover {
+    background-image: url("../../assets/CheckBox/bookmarkIcon_checked_hover.svg");
+    background-repeat: no-repeat;
+}
+
+.check-box:checked:disabled + .uiXeny-checkBox--bookmarkIcon {
+    background-image: url("../../assets/CheckBox/bookmarkIcon_checked_disabled.svg");
+    background-repeat: no-repeat;
+}
+
+.check-box:enabled + .uiXeny-checkBox--bookmarkIcon:active, .check-box:enabled + .uiXeny-checkBox--favoriteIcon:active {
+    background-color: var(--checkbox-icon-event-background-color);
+    box-shadow: var(--box-shadow-event-around-5px);
+}
+
+

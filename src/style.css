@@ -1,0 +1,23 @@
+:root {
+    --box-shadow-event-around-5px: 0px 0px 0px 5px rgba(5,145,255,.2);
+    --box-shadow-event-around-4px: 0px 0px 0px 4px rgba(5,145,255,.2);
+    --box-shadow-event-around-2px: 0px 0px 0px 2px rgba(5,145,255,.2);
+    --box-shadow-bottom: 0 2px 0 rgba(5,145,255,.2);
+    --box-shadow-button: 0 2px 0 rgba(5,145,255,.1);
+
+    --component-border-1px: 1px solid #AFC1D0FF;
+    --component-border-2px: 2px solid #AFC1D0FF;
+
+    --component-event-hover-color: #3FA9FFFF;
+    --component-event-active-checked-color: #1677ff;
+    --component-event-active-color: #2E53F6FF;
+
+    --component-main-color: #1677ff;
+    --component-disabled-color: lightgrey;
+
+    --component-transition-time: 0.2s;
+
+    --checkbox-icon-event-background-color: #0591FF33;
+    --toggle-switch-unchecked-hover-color: darkgrey;
+    --toggle-switch-unchecked-color: #ccc;
+}

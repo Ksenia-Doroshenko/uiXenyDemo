@@ -1,0 +1,55 @@
+.uiXeny-input {
+    border: var(--component-border-1px);
+    background-color: transparent;
+    padding: 5px;
+    margin: 10px 0;
+    width: calc(100% - 10px);
+    min-height: 20px;
+    min-width: 250px;
+    transition: var(--component-transition-time);
+}
+
+.uiXeny-input:focus {
+    box-shadow: var(--box-shadow-event-around-2px);
+    outline: 0;
+}
+
+.uiXeny-input:hover {
+    border-color: var(--component-event-hover-color);
+}
+
+.uiXeny-input--basicInput {
+    border-radius: 5px;
+}
+
+.uiXeny-input--underlined {
+    border: none;
+    border-bottom: var(--component-border-1px);
+    width: 100%;
+}
+
+.uiXeny-input--underlined:focus {
+    box-shadow: var(--box-shadow-bottom);
+}
+
+.uiXeny-input--underlined:hover {
+    border-color: var(--component-event-hover-color);
+}
+
+.uiXeny-input--sizeSmall {
+    /* padding: 5px 10px; */
+    height: 19px;
+    font-size: small;
+}
+
+.uiXeny-input--sizeMedium {
+    /* padding: 5px 16px; */
+    height: 27px;
+    font-size: medium;
+}
+
+.uiXeny-input--sizeLarge {
+    /* padding: 5px 22px; */
+    height: 35px;
+    font-size: large;
+}

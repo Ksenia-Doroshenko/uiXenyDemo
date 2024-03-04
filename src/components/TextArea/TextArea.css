@@ -1,0 +1,17 @@
+.uiXeny-textArea {
+    transition: background-color var(--component-transition-time);
+    resize: vertical;
+}
+
+.uiXeny-textArea__container {
+    display: grid;
+    width: 100%;
+    position: relative;
+}
+
+.uiXeny-textArea__container__counter {
+    color: grey;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}

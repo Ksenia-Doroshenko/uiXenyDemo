@@ -1,0 +1,1 @@
+type TSize = "small" | "medium" | "large";

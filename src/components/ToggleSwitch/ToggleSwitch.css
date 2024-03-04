@@ -1,0 +1,60 @@
+.uiXeny-toggleSwitch {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.uiXeny-toggleSwitch--default {
+    display: inline-block;
+    background: var(--toggle-switch-unchecked-color);
+    border-radius: 16px;
+    width: 58px;
+    height: 32px;
+    position: relative;
+    vertical-align: middle;
+    transition: var(--component-transition-time);
+}
+.uiXeny-toggleSwitch--default:before, .uiXeny-toggleSwitch--default:after {
+    content: "";
+}
+.uiXeny-toggleSwitch--default:before {
+    display: block;
+    background: white;
+    border-radius: 24px;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: 0.25s;
+}
+
+.uiXeny-toggleSwitch__label:hover .uiXeny-toggleSwitch--default {
+    background: var(--toggle-switch-unchecked-hover-color);
+}
+
+.check-box:enabled:checked:hover + .uiXeny-toggleSwitch--default {
+    background: var(--component-event-hover-color);
+}
+
+.check-box:focus-visible + .uiXeny-toggleSwitch--default {
+    box-shadow: var(--box-shadow-event-around-5px);
+    outline: none;
+}
+
+.check-box:checked + .uiXeny-toggleSwitch--default {
+    background: var(--component-main-color);
+}
+.check-box:checked + .uiXeny-toggleSwitch--default:before {
+    left: calc(100% - 4px);
+    transform: translateX(-100%);
+}
+
+.uiXeny-toggleSwitch--default:active:before {
+    width: 30px;
+}
+
+.uiXeny-toggleSwitch__text {
+    margin-left: 5px;
+    position: relative;
+    top: 2px;
+}
