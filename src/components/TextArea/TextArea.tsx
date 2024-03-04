@@ -1,6 +1,11 @@
 import "./TextArea.css";
 import {ChangeEvent, DetailedHTMLProps, TextareaHTMLAttributes, useRef, useState} from "react";
 
+type TTextAreaProps = DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> & {
+    className?: string;
+
+}
+
 export const TextArea = ({children, ...props}: TTextAreaProps) => {
     let classNameArr = ["uiXeny-textArea uiXeny-input uiXeny-input--basicInput"];
 
@@ -30,6 +35,3 @@ export const TextArea = ({children, ...props}: TTextAreaProps) => {
     )
 }
 
-type TTextAreaProps = DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> & {
-    className?: string;
-}
