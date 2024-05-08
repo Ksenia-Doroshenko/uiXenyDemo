@@ -1,5 +1,5 @@
 .uiXeny-textArea {
-    transition: background-color var(--component-transition-time);
+    transition: background-color var(--uiXeny-transition-time);
     resize: vertical;
 }
 

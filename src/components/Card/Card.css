@@ -1,0 +1,98 @@
+.uiXeny-card {
+    border: var(--uiXeny-border-1px);
+    border-radius: var(--uiXeny-border-radius);
+    min-width: 200px;
+    min-height: 100px;
+    padding: 0;
+    /*cursor: pointer;*/
+    /*margin: 10px;*/
+    color: var(--uiXeny-text-color);
+    transition: var(--uiXeny-transition-time);
+    margin: 24px 0;
+    box-sizing: border-box;
+}
+
+.uiXeny-card:hover {
+    box-shadow: var(--uiXeny-box-shadow-float);
+    border-color: transparent;
+}
+
+.uiXeny-card__head {
+    padding: 24px 24px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: var(--uiXeny-border-1px);
+}
+
+.uiXeny-card__head_title, .uiXeny-card__meta_title {
+    font-weight: 700;
+    font-size: large;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.uiXeny-card__extra a{
+    text-decoration: none;
+    color: var(--uiXeny-primary-color);
+    transition: var(--uiXeny-transition-time);
+}
+
+.uiXeny-card__extra a:hover {
+    color: var(--uiXeny-secondary-color);
+}
+
+.uiXeny-card__extra a:active {
+    color: var(--uiXeny-active-color);
+}
+
+.uiXeny-card__body {
+    padding: 16px 24px;
+}
+
+.uiXeny-card__avatar>* {
+    max-width: 100%;
+    display: block;
+}
+
+.uiXeny-card__avatar {
+    margin-top: -1px;
+    margin-bottom: -1px;
+    margin-inline-start: -1px;
+    margin-inline-end: -1px;
+}
+
+.uiXeny-card__avatar img{
+    max-width: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+.uiXeny-card__image_mask--top img{
+    border-radius: var(--uiXeny-border-radius) var(--uiXeny-border-radius) 0 0;
+}
+
+.uiXeny-card__image_mask--bottom img{
+    border-radius:  0 0 var(--uiXeny-border-radius) var(--uiXeny-border-radius);
+}
+
+.uiXeny-card__image_mask img{
+    border-radius: var(--uiXeny-border-radius);
+}
+
+.uiXeny-card__actions {
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    padding: 16px 10px;
+    border-top: var(--uiXeny-border-1px);
+}
+
+.uiXeny-card__meta {
+    display: grid;
+    gap: 10px;
+}
+
+.uiXeny-card__meta_description {
+    color: var(--uiXeny-description-text-color);
+}
+

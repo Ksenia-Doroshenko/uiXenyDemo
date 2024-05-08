@@ -1,0 +1,30 @@
+.uiXeny-float-button {
+    padding: 6px 6px;
+    min-width: 40px;
+    min-height: 40px;
+    box-shadow: var(--uiXeny-box-shadow-float);
+    border-color: transparent;
+}
+.uiXeny-float-button:hover {
+    border-color: transparent;
+    transform: translateY(-2px);
+}
+
+.uiXeny-float-button:active {
+    box-shadow: var(--uiXeny-box-shadow-float-active);
+    border-color: transparent;
+}
+
+.uiXeny-float-button--primary:active {
+    background-color: var(--uiXeny-hover-color);
+}
+
+.uiXeny-float-button:focus-visible{
+    box-shadow: var(--uiXeny-box-shadow-float), var(--uiXeny-box-shadow-event-around-5px);
+
+}
+
+.uiXeny-float-button--circle {
+    border-radius: 50%;
+}
+

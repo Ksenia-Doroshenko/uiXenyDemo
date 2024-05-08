@@ -1,62 +1,62 @@
 .uiXeny-button {
-    border-radius: 5px;
+    border-radius: var(--uiXeny-border-radius);
     border: none;
     outline: 0;
     cursor: pointer;
-    box-shadow: var(--box-shadow-button);
-    transition-duration: var(--component-transition-time);
+    box-shadow: var(--uiXeny-box-shadow-button);
+    transition-duration: var(--uiXeny-transition-time);
     margin: 8px;
     width: fit-content;
 }
 
 .uiXeny-button:active {
-    box-shadow: var(--box-shadow-event-around-5px);
+    box-shadow: var(--uiXeny-box-shadow-event-around-5px);
 }
 
 .uiXeny-button--default {
-    border: var(--component-border-1px);
+    border: var(--uiXeny-border-1px);
     background-color: white;
 }
 
 .uiXeny-button--default:hover {
-    border-color: var(--component-event-hover-color);
-    color: var(--component-event-hover-color);
+    border-color: var(--uiXeny-hover-color);
+    color: var(--uiXeny-hover-color);
 }
 
 .uiXeny-button--default:active {
-    border-color: var(--component-event-active-checked-color);
-    color: var(--component-event-active-checked-color);
+    border-color: var(--uiXeny-active-checked-color);
+    color: var(--uiXeny-active-checked-color);
 }
 
 .uiXeny-button:focus-visible {
-    box-shadow: var(--box-shadow-event-around-5px);
+    box-shadow: var(--uiXeny-box-shadow-event-around-5px);
 }
 
 .uiXeny-button--primary {
-    background-color: var(--component-main-color);
+    background-color: var(--uiXeny-main-color);
     color: white;
 }
 
 .uiXeny-button--primary:hover {
-    background-color: var(--component-event-hover-color);
+    background-color: var(--uiXeny-hover-color);
 }
 
 .uiXeny-button--primary:active {
-    background-color: var(--component-event-active-color);
+    background-color: var(--uiXeny-active-color);
 }
 
 .uiXeny-button--link {
-    color: var(--component-main-color);
+    color: var(--uiXeny-main-color);
     background-color: transparent;
     box-shadow: none;
 }
 
 .uiXeny-button--link:hover {
-    color: var(--component-event-hover-color);
+    color: var(--uiXeny-hover-color);
 }
 
 .uiXeny-button--link:active {
-    color: var(--component-event-active-color);
+    color: var(--uiXeny-active-color);
     box-shadow: none;
 }
 

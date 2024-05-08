@@ -12,7 +12,7 @@
     width: 12px;
     height: 12px;
     margin-right: 5px;
-    transition: var(--component-transition-time);
+    transition: var(--uiXeny-transition-time);
 }
 
 .check-box:focus {
@@ -20,20 +20,20 @@
 }
 
 .check-box:focus-visible + .uiXeny-checkBox {
-    box-shadow: var(--box-shadow-event-around-2px);
+    box-shadow: var(--uiXeny-box-shadow-event-around-2px);
 }
 
 .check-box:enabled + .uiXeny-checkBox:hover {
-    border-color: var(--component-event-hover-color);
+    border-color: var(--uiXeny-hover-color);
 }
 
 .check-box:enabled + .uiXeny-checkBox:active{
-    box-shadow: var(--box-shadow-event-around-2px);
-    border-color: var(--component-event-active-checked-color);
+    box-shadow: var(--uiXeny-box-shadow-event-around-2px);
+    border-color: var(--uiXeny-active-checked-color);
 }
 
 .uiXeny-checkBox--default, .uiXeny-checkBox--checkmark {
-    border: var(--component-border-2px);
+    border: var(--uiXeny-border-2px);
     border-radius: 3px;
 }
 
@@ -50,19 +50,19 @@
 }
 
 .check-box:checked + .uiXeny-checkBox--default::before {
-    background-color: var(--component-event-active-checked-color);
+    background-color: var(--uiXeny-active-checked-color);
 }
 
 .check-box:disabled + .uiXeny-checkBox {
-    border-color: var(--component-disabled-color);
+    border-color: var(--uiXeny-disabled-color);
 }
 
 .check-box:checked:disabled + .uiXeny-checkBox::before {
-    background-color: var(--component-disabled-color);
+    background-color: var(--uiXeny-disabled-color);
 }
 
 .check-box:disabled + .uiXeny-checkBox  + .uiXeny-checkBox__label {
-    color: var(--component-disabled-color);
+    color: var(--uiXeny-disabled-color);
 }
 
 .check-box:checked + .uiXeny-checkBox--checkmark {
@@ -78,30 +78,30 @@
 }
 
 .uiXeny-checkBox--checkmark--filled {
-    border: var(--component-border-2px);
+    border: var(--uiXeny-border-2px);
     background-color: transparent;
     border-radius: 3px;
 }
 
 .check-box:checked + .uiXeny-checkBox--checkmark--filled:hover{
-    border-color: var(--component-event-hover-color);
-    background-color: var(--component-event-hover-color);
+    border-color: var(--uiXeny-hover-color);
+    background-color: var(--uiXeny-hover-color);
 }
 
 .check-box:checked + .uiXeny-checkBox--checkmark--filled {
     background-image: url("../../assets/CheckBox/checkmark_white.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: var(--component-event-active-checked-color);;
-    border-color: var(--component-event-active-checked-color);;
+    background-color: var(--uiXeny-active-checked-color);;
+    border-color: var(--uiXeny-active-checked-color);;
 }
 
 .check-box:checked:disabled + .uiXeny-checkBox--checkmark--filled {
     background-image: url("../../assets/CheckBox/checkmark_white.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: var(--component-disabled-color);
-    border-color: var(--component-disabled-color);
+    background-color: var(--uiXeny-disabled-color);
+    border-color: var(--uiXeny-disabled-color);
 }
 
 .uiXeny-checkBox--favoriteIcon {
@@ -141,8 +141,8 @@
 }
 
 .check-box:focus-visible + .uiXeny-checkBox--favoriteIcon, .check-box:focus-visible + .uiXeny-checkBox--bookmarkIcon {
-    background-color: var(--checkbox-icon-event-background-color);
-    box-shadow: var(--box-shadow-event-around-5px);
+    background-color: var(--uiXeny-checkbox-icon-event-background-color);
+    box-shadow: var(--uiXeny-box-shadow-event-around-5px);
 }
 
 .uiXeny-checkBox--bookmarkIcon {
@@ -182,8 +182,8 @@
 }
 
 .check-box:enabled + .uiXeny-checkBox--bookmarkIcon:active, .check-box:enabled + .uiXeny-checkBox--favoriteIcon:active {
-    background-color: var(--checkbox-icon-event-background-color);
-    box-shadow: var(--box-shadow-event-around-5px);
+    background-color: var(--uiXeny-checkbox-icon-event-background-color);
+    box-shadow: var(--uiXeny-box-shadow-event-around-5px);
 }
 
 

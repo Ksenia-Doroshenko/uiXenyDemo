@@ -1,39 +1,39 @@
 .uiXeny-input {
-    border: var(--component-border-1px);
+    border: var(--uiXeny-border-1px);
     background-color: transparent;
     padding: 5px;
     margin: 10px 0;
     width: calc(100% - 10px);
     min-height: 20px;
     min-width: 250px;
-    transition: var(--component-transition-time);
+    transition: var(--uiXeny-transition-time);
 }
 
 .uiXeny-input:focus {
-    box-shadow: var(--box-shadow-event-around-2px);
+    box-shadow: var(--uiXeny-box-shadow-event-around-2px);
     outline: 0;
 }
 
 .uiXeny-input:hover {
-    border-color: var(--component-event-hover-color);
+    border-color: var(--uiXeny-hover-color);
 }
 
 .uiXeny-input--basicInput {
-    border-radius: 5px;
+    border-radius: var(--uiXeny-border-radius);
 }
 
 .uiXeny-input--underlined {
     border: none;
-    border-bottom: var(--component-border-1px);
+    border-bottom: var(--uiXeny-border-1px);
     width: 100%;
 }
 
 .uiXeny-input--underlined:focus {
-    box-shadow: var(--box-shadow-bottom);
+    box-shadow: var(--uiXeny-box-shadow-bottom);
 }
 
 .uiXeny-input--underlined:hover {
-    border-color: var(--component-event-hover-color);
+    border-color: var(--uiXeny-hover-color);
 }
 
 .uiXeny-input--sizeSmall {
