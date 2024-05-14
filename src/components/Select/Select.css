@@ -1,0 +1,84 @@
+.uiXeny-select {
+    width: 100%;
+    position: relative;
+}
+
+.uiXeny-select .uiXeny-select__selector {
+    padding: 15px 20px;
+    background: var(--uiXeny-background-color-white);
+    border: var(--uiXeny-border-1px);
+    color: var(--uiXeny-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border-radius: var(--uiXeny-border-radius);
+    transition: var(--uiXeny-transition-time);
+    margin: 10px 0;
+}
+
+.uiXeny-select .uiXeny-select__selector:hover {
+    border-color: var(--uiXeny-hover-color);
+}
+
+.uiXeny-select .uiXeny-select__content .uiXeny-select__item:hover {
+    background: var(--uiXeny-hover-color-black);
+}
+
+.uiXeny-select .uiXeny-select__selector:active {
+    border-color: var(--uiXeny-active-color);
+}
+
+.uiXeny-select .uiXeny-select__selector:focus-visible, .uiXeny-select__selector:focus {
+    box-shadow: var(--uiXeny-box-shadow-event-around-2px);
+    outline: 0;
+}
+
+.uiXeny-select__selector_placeholder {
+    color: var(--uiXeny-text-subdued-color);
+}
+
+.uiXeny-select .uiXeny-select__selector .uiXeny-select__selector_items {
+    display: flex;
+    transition: var(--uiXeny-transition-time);
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.uiXeny-select .uiXeny-select__selector .uiXeny-select__selector_items .uiXeny-select__item--selected {
+    background-color: var(--uiXeny-background-color-grey);
+    padding: 3px;
+    border-radius: var(--uiXeny-border-radius);
+}
+
+.uiXeny-select .uiXeny-select__content {
+    position: absolute;
+    background: var(--uiXeny-background-color-white);
+    box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
+    font-weight: 500;
+    color: #333;
+    width: 100%;
+    transition: 0.2s;
+    border-radius: var(--uiXeny-border-radius);
+    overflow-y: auto;
+    max-height: 200px;
+}
+
+.uiXeny-select .uiXeny-select__content .uiXeny-select__item {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: var(--uiXeny-transition-time);
+}
+
+.uiXeny-select .uiXeny-select__content .uiXeny-select__item--selected,
+.uiXeny-select .uiXeny-select__content .uiXeny-select__item--selected:hover {
+    background: var(--uiXeny-selected-color);
+    font-weight: bold;
+}
+
+.uiXeny-select .uiXeny-select__content .uiXeny-select__item--disabled,
+.uiXeny-select .uiXeny-select__content .uiXeny-select__item--disabled:hover {
+    background-color: transparent;
+    color: var(--uiXeny-disabled-color);
+    cursor: not-allowed;
+}
