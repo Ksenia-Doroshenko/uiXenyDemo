@@ -1,6 +1,8 @@
 .uiXeny-icon {
     cursor: pointer;
-    display: block;
+    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 .uiXeny-icon--sizeSmall {

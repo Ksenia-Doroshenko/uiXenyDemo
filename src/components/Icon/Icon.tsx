@@ -9,6 +9,7 @@ type TIconProps = {
 
 type IconCmp = React.FC<TIconProps> & {
     TextFileOutlined: React.FC<TIconProps>;
+    DownOutlined: React.FC<TIconProps>;
 };
 export const Icon: IconCmp = ({sizeType = "medium", ...props}: TIconProps) => {
     let classNameArr = ["uiXeny-icon"];
@@ -74,6 +75,36 @@ const TextFileOutlined: React.FC<TIconProps> = ({sizeType = "medium", ...props}:
     )
 }
 
+const DownOutlined: React.FC<TIconProps> = ({sizeType = "medium", ...props}: TIconProps) => {
+    let classNameArr = ["uiXeny-icon uiXeny-icon_DownOutlined"];
+    props.className && classNameArr.push(props.className);
+
+    switch (sizeType) {
+        case "small": {
+            classNameArr.push("uiXeny-icon--sizeSmall");
+            break;
+        }
+        case "large": {
+            classNameArr.push("uiXeny-icon--sizeLarge");
+            break;
+        }
+        default: {
+            classNameArr.push("uiXeny-icon--sizeMedium");
+            break;
+        }
+    }
+
+    const strokeColor = "#333";
+    return (
+        <div className={classNameArr.join(' ')} {...props}>
+            <svg viewBox="0 0 23 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 1L11.5 12L1 1" stroke={strokeColor} stroke-width="2"/>
+            </svg>
+        </div>
+    )
+}
+
 Icon.TextFileOutlined = TextFileOutlined;
+Icon.DownOutlined = DownOutlined;
 
 export default Icon;

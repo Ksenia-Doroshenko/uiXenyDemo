@@ -93,6 +93,6 @@
 }
 
 .uiXeny-card__meta_description {
-    color: var(--uiXeny-description-text-color);
+    color: var(--uiXeny-text-subdued-color);
 }
 

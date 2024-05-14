@@ -9,6 +9,7 @@ import './style.css'
 import {TextArea} from "./components/TextArea/TextArea";
 import {ThemeProvider} from "./contexts/ThemeContext";
 import Card from "./components/Card/Card";
+import Select from "./components/Select/Select";
 
 
 function App() {
@@ -17,6 +18,13 @@ function App() {
         setChecked(e.target.checked);
     }
 
+    function onChangeSelect(value: string | number) {
+        console.log(value);
+    }
+
+    function onFocusSelect() {
+        console.log("focused select");
+    }
 
     return (
         <>
@@ -123,6 +131,12 @@ function App() {
                                 </div>
                             </div>
                             <ToggleSwitch>Toggle switch</ToggleSwitch>
+                            <Select defaultValue={"default value"} placeholder="Select uiXeny" onChange={onChangeSelect} onFocus={onFocusSelect} options={[
+                                {value: 'jack', label: 'Jack'},
+                                {value: 'lucy', label: 'Lucy'},
+                                {value: 'yiminghe', label: 'Yiminghe'},
+                                {value: 'disabled', label: 'Disabled', disabled: true},
+                            ]}></Select>
 
                             <Card title="Title" actions={[<Icon.TextFileOutlined/>, <Icon.TextFileOutlined/>,
                                 <Icon.TextFileOutlined/>, <Icon.TextFileOutlined/>]} style={{width: 300}}
@@ -163,6 +177,8 @@ function App() {
                             </Button.Float>
 
                             <Icon.TextFileOutlined/>
+
+
 
                         </div>
 
