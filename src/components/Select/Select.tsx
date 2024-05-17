@@ -37,16 +37,19 @@ export const Select: React.FC<TSelectProps> = ({
     const [isActive, setIsActive] = useState(false);
     const [selected, setSelected] = useState<OptionType | null>(null);
     const [selectedOptions, setSelectedOptions] = useState<OptionType[]>([]);
+    const [highlightedIndex, setHighlightedIndex] = useState(-1);
 
     const selectorRef = useRef<HTMLDivElement>(null);
     const menuRef = useRef<HTMLDivElement>(null);
-    const [menuPosition, setMenuPosition] = useState<'top' | 'bottom' | undefined>(undefined);
     const selectRef = useRef<HTMLDivElement>(null);
+
+    const [menuPosition, setMenuPosition] = useState<'top' | 'bottom' | undefined>(undefined);
 
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
-            event.preventDefault();
-            if (selectRef.current && !selectRef.current.contains(event.target as Node)) {
+            // event.preventDefault();
+            if ((selectRef.current && !selectRef.current.contains(event.target as Node)) ||
+            (menuRef.current && !menuRef.current.contains(event.target as Node))) {
                 setIsActive(false);
             }
         }
@@ -56,6 +59,30 @@ export const Select: React.FC<TSelectProps> = ({
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [selectRef]);
+
+    const handleKeyDown = (event: React.KeyboardEvent) => {
+        if (event.key === 'Enter') {
+            if (!isActive) {
+                setIsActive(true);
+            } else if (highlightedIndex >= 0 && highlightedIndex < props.options.length) {
+                setSelected(props.options[highlightedIndex]);
+                setIsActive(false);
+                setHighlightedIndex(-1);
+            }
+        } else if (event.key == 'ArrowDown') {
+            event.preventDefault();
+            setHighlightedIndex((prevIndex: any) => ((prevIndex + 1) % props.options.length));
+        } else if (event.key === 'ArrowUp') {
+            event.preventDefault();
+            setHighlightedIndex((prevIndex: any) => ((prevIndex - 1 + props.options.length) % props.options.length));
+        }
+    };
+
+    useEffect(() => {
+        if (isActive && highlightedIndex === -1) {
+            setHighlightedIndex(0);
+        }
+    }, [isActive]);
 
     useEffect(() => {
         const selectorElement = selectorRef.current;
@@ -105,7 +132,7 @@ export const Select: React.FC<TSelectProps> = ({
     return (
         <>
             <div className={classNameArr.join(' ')} ref={selectRef}>
-                <div tabIndex={0} ref={selectorRef} className="uiXeny-select__selector"
+                <div tabIndex={0} onKeyDown={handleKeyDown} ref={selectorRef} className="uiXeny-select__selector"
                      onClick={(_) => {
                          setIsActive(!isActive);
                          onFocus?.();
@@ -142,8 +169,8 @@ export const Select: React.FC<TSelectProps> = ({
                         // Позиционируем меню в зависимости от выбранного варианта
                         [menuPosition === 'top' ? 'bottom' : 'top']: '100%',
                     }} ref={menuRef} className="uiXeny-select__content">
-                        {props.options ? props.options.map((option) => (
-                            <div
+                        {props.options ? props.options.map((option, index) => (
+                            <div key={option.value} onMouseEnter={() => !option.disabled && setHighlightedIndex(index)}
                                 onClick={(_) => {
                                     if (!option.disabled) {
                                         if (props.multipleSelect) {
@@ -167,7 +194,7 @@ export const Select: React.FC<TSelectProps> = ({
                                         onChange?.(option.value);
                                     }
                                 }}
-                                className={"uiXeny-select__item" +
+                                className={"uiXeny-select__item" + (highlightedIndex === index ? " uiXeny-select__item--highlighted" : "") +
                                     (option.disabled ? " uiXeny-select__item--disabled" :
                                             (!props.multipleSelect ?
                                                     (option === selected ? " uiXeny-select__item--selected" : "")

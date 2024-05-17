@@ -7,7 +7,7 @@
     --uiXeny-text-color: #333;
     --uiXeny-text-subdued-color: #00000073;
     --uiXeny-background-color-white: #fff;
-    --uiXeny-background-color-grey: lightgrey;
+    --uiXeny-background-color-grey : rgba(0, 0, 0, 0.04);
 
     /* Цвета для различных состояний и эффектов */
     --uiXeny-hover-color: #3FA9FFFF;

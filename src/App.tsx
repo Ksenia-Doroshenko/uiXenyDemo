@@ -131,15 +131,16 @@ function App() {
                                 </div>
                             </div>
                             <ToggleSwitch>Toggle switch</ToggleSwitch>
-                            <Select defaultValue={"default value"} placeholder="Select uiXeny" onChange={onChangeSelect} onFocus={onFocusSelect} options={[
+
+                            <Select multipleSelect  placeholder="Select uiXeny" onChange={onChangeSelect} onFocus={onFocusSelect} options={[
                                 {value: 'jack', label: 'Jack'},
                                 {value: 'lucy', label: 'Lucy'},
                                 {value: 'yiminghe', label: 'Yiminghe'},
                                 {value: 'disabled', label: 'Disabled', disabled: true},
                             ]}></Select>
 
-                            <Card title="Title" actions={[<Icon.TextFileOutlined/>, <Icon.TextFileOutlined/>,
-                                <Icon.TextFileOutlined/>, <Icon.TextFileOutlined/>]} style={{width: 300}}
+                            <Card title="Title" actions={[<Icon.TextFileOutlined key={1}/>, <Icon.TextFileOutlined key={2}/>,
+                                <Icon.TextFileOutlined key={3}/>, <Icon.TextFileOutlined key={4}/>]} style={{width: 300}}
                                   extra={<a href="#">More</a>}
                                   avatar={<img
                                       src={"https://sun9-13.userapi.com/impg/Whb89mqBKvrFOcEJSv1tSxf0a0PslcdOjtvbxg/6icsRB-byDg.jpg?size=2560x1707&quality=96&sign=a316b7b0d237a94ccf407de1a118040f&type=album"}/>}>
@@ -149,12 +150,12 @@ function App() {
                                     dfuoshfjkapeiouhjfeokdfmekdi</p>
                             </Card>
 
-                            <Card style={{width: 300}} actions={[<Icon.TextFileOutlined/>, <Icon.TextFileOutlined/>,
-                                <Icon.TextFileOutlined/>]} extra={<a href="#">More</a>}
+                            <Card style={{width: 300}} actions={[<Icon.TextFileOutlined key={1}/>, <Icon.TextFileOutlined key={2}/>,
+                                <Icon.TextFileOutlined key={3}/>]} extra={<a href="#">More</a>}
                                   avatar={<img alt="example"
                                                src={"https://sun9-13.userapi.com/impg/Whb89mqBKvrFOcEJSv1tSxf0a0PslcdOjtvbxg/6icsRB-byDg.jpg?size=2560x1707&quality=96&sign=a316b7b0d237a94ccf407de1a118040f&type=album"}/>}></Card>
-                            <Card style={{width: 300}} actions={[<Icon.TextFileOutlined/>, <Icon.TextFileOutlined/>,
-                                <Icon.TextFileOutlined/>]} extra={<a href="#">More</a>}
+                            <Card style={{width: 300}} actions={[<Icon.TextFileOutlined key={1}/>, <Icon.TextFileOutlined key={2}/>,
+                                <Icon.TextFileOutlined key={3}/>]} extra={<a href="#">More</a>}
                                   avatar={<img alt="example"
                                                src={"https://sun9-13.userapi.com/impg/Whb89mqBKvrFOcEJSv1tSxf0a0PslcdOjtvbxg/6icsRB-byDg.jpg?size=2560x1707&quality=96&sign=a316b7b0d237a94ccf407de1a118040f&type=album"}/>}> описание
                                 картинки </Card>
@@ -162,8 +163,8 @@ function App() {
                             <Card style={{width: 300}} title="Title" extra={<a href="#">More</a>}
                                   avatar={<div style={{padding: 24, paddingBottom: 0 }}><img style={{borderRadius: 0}} alt="example"
                                                                           src={"https://sun9-13.userapi.com/impg/Whb89mqBKvrFOcEJSv1tSxf0a0PslcdOjtvbxg/6icsRB-byDg.jpg?size=2560x1707&quality=96&sign=a316b7b0d237a94ccf407de1a118040f&type=album"}/>
-                                  </div>} actions={[<Icon.TextFileOutlined/>, <Icon.TextFileOutlined/>,
-                                <Icon.TextFileOutlined/>]}><Card.CardMeta title="Meta title" description="Meta description"/></Card>
+                                  </div>} actions={[<Icon.TextFileOutlined key={1}/>, <Icon.TextFileOutlined key={2}/>,
+                                <Icon.TextFileOutlined key={3}/>]}><Card.CardMeta title="Meta title" description="Meta description"/></Card>
 
                             <TextArea rows={15} cols={5} maxLength={100} placeholder="TextArea"></TextArea>
 
