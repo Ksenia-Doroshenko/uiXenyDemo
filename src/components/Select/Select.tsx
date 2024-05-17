@@ -24,17 +24,38 @@ type OptionType = {
     disabled?: boolean;
 };
 
-export const Select: React.FC<TSelectProps> = ({sizeType = "medium", children, onChange, onFocus, onBlur, ...props}: TSelectProps) => {
+export const Select: React.FC<TSelectProps> = ({
+                                                   sizeType = "medium",
+                                                   children,
+                                                   onChange,
+                                                   onFocus,
+                                                   onBlur,
+                                                   ...props
+                                               }: TSelectProps) => {
     let classNameArr = ["uiXeny-select"];
 
     const [isActive, setIsActive] = useState(false);
-    // const [isFocused, setIsFocused] = useState(false);
     const [selected, setSelected] = useState<OptionType | null>(null);
     const [selectedOptions, setSelectedOptions] = useState<OptionType[]>([]);
 
     const selectorRef = useRef<HTMLDivElement>(null);
     const menuRef = useRef<HTMLDivElement>(null);
     const [menuPosition, setMenuPosition] = useState<'top' | 'bottom' | undefined>(undefined);
+    const selectRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            event.preventDefault();
+            if (selectRef.current && !selectRef.current.contains(event.target as Node)) {
+                setIsActive(false);
+            }
+        }
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [selectRef]);
 
     useEffect(() => {
         const selectorElement = selectorRef.current;
@@ -83,11 +104,12 @@ export const Select: React.FC<TSelectProps> = ({sizeType = "medium", children, o
     //TODO ДОБАВИТЬ ONBLUR
     return (
         <>
-            <div className={classNameArr.join(' ')}>
+            <div className={classNameArr.join(' ')} ref={selectRef}>
                 <div tabIndex={0} ref={selectorRef} className="uiXeny-select__selector"
                      onClick={(_) => {
                          setIsActive(!isActive);
-                         onFocus?.();}}>
+                         onFocus?.();
+                     }}>
                     <div className="uiXeny-select__selector_items">
                         {!props.multipleSelect ?
                             (selected?.label ? selected.label :
