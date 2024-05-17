@@ -54,7 +54,7 @@
     display: block;
 }
 
-.uiXeny-card__avatar {
+.uiXeny-card__avatar, .uiXeny-card__actions {
     margin-top: -1px;
     margin-bottom: -1px;
     margin-inline-start: -1px;
