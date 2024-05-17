@@ -33,16 +33,19 @@ export const Icon: IconCmp = ({sizeType = "medium", ...props}: TIconProps) => {
 
     return (
         <div className={classNameArr.join(' ')} {...props}>
-            <symbol>
-                <svg viewBox="0 0 26 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 10.6V33H25V1H11.8M1 10.6H11.8V1M1 10.6L11.8 1" stroke="black" stroke-width="2"/>
-                    <path d="M7 18.0667H20.2" stroke="black" stroke-width="2"/>
-                    <path d="M7 22.3333H17.8" stroke="black" stroke-width="2"/>
-                </svg>
-            </symbol>
+            {textFileOutlined}
         </div>
     )
 }
+const strokeColor = "#333";
+
+const textFileOutlined = (
+    <svg viewBox="0 0 26 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 10.6V33H25V1H11.8M1 10.6H11.8V1M1 10.6L11.8 1" stroke={strokeColor} strokeWidth="2"/>
+        <path d="M7 18.0667H20.2" stroke={strokeColor} strokeWidth="2"/>
+        <path d="M7 22.3333H17.8" stroke={strokeColor} strokeWidth="2"/>
+    </svg>
+)
 
 const TextFileOutlined: React.FC<TIconProps> = ({sizeType = "medium", ...props}: TIconProps) => {
     let classNameArr = ["uiXeny-icon uiXeny-icon_TextFileOutlined"];
@@ -62,18 +65,20 @@ const TextFileOutlined: React.FC<TIconProps> = ({sizeType = "medium", ...props}:
             break;
         }
     }
+
     return (
         <div className={classNameArr.join(' ')} {...props}>
-            <symbol>
-                <svg viewBox="0 0 26 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 10.6V33H25V1H11.8M1 10.6H11.8V1M1 10.6L11.8 1" stroke="black" stroke-width="2"/>
-                    <path d="M7 18.0667H20.2" stroke="black" stroke-width="2"/>
-                    <path d="M7 22.3333H17.8" stroke="black" stroke-width="2"/>
-                </svg>
-            </symbol>
+            {textFileOutlined}
         </div>
     )
 }
+
+
+const downOutlined = (
+    <svg viewBox="0 0 23 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 1L11.5 12L1 1" stroke={strokeColor} strokeWidth="2"/>
+    </svg>
+)
 
 const DownOutlined: React.FC<TIconProps> = ({sizeType = "medium", ...props}: TIconProps) => {
     let classNameArr = ["uiXeny-icon uiXeny-icon_DownOutlined"];
@@ -94,12 +99,9 @@ const DownOutlined: React.FC<TIconProps> = ({sizeType = "medium", ...props}: TIc
         }
     }
 
-    const strokeColor = "#333";
     return (
         <div className={classNameArr.join(' ')} {...props}>
-            <svg viewBox="0 0 23 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M22 1L11.5 12L1 1" stroke={strokeColor} stroke-width="2"/>
-            </svg>
+            {downOutlined}
         </div>
     )
 }
