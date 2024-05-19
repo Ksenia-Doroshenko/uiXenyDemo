@@ -50,7 +50,7 @@ export const Input: InputCmp = ({
     props.className && classNameArr.push(props.className);
 
     return (
-        <input className={classNameArr.join(' ')} type="text" {...props}/>
+        <input {...props} className={classNameArr.join(' ')} type="text"/>
     )
 }
 
@@ -95,7 +95,7 @@ const Password: React.FC<TInputProps<TInputTypes>> = ({
 
     return (
         <div className="uiXeny-password__container">
-            <input type={isTextShowed ? "text" : "password"} className={classNameArr.join(' ')} {...props}/>
+            <input {...props} type={isTextShowed ? "text" : "password"} className={classNameArr.join(' ')}/>
             <button className="uiXeny-password_show_button"
                     dangerouslySetInnerHTML={{__html: isTextShowed ? openedEye : closedEye}}
                     onClick={() => setIsTextShowed(!isTextShowed)}></button>
