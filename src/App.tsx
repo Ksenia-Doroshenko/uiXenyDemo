@@ -10,6 +10,7 @@ import {TextArea} from "./components/TextArea/TextArea";
 import {ThemeProvider} from "./contexts/ThemeContext";
 import Card from "./components/Card/Card";
 import Select from "./components/Select/Select";
+import Modal from "./components/Modal/Modal";
 
 
 function App() {
@@ -25,6 +26,12 @@ function App() {
     function onFocusSelect() {
         console.log("focused select");
     }
+
+    function onBlurSelect() {
+        console.log("blurred select");
+    }
+
+    const [isOpenModal, setIsOpenModal] = useState(false);
 
     return (
         <>
@@ -132,39 +139,98 @@ function App() {
                             </div>
                             <ToggleSwitch>Toggle switch</ToggleSwitch>
 
-                            <Select multipleSelect  placeholder="Select uiXeny" onChange={onChangeSelect} onFocus={onFocusSelect} options={[
-                                {value: 'jack', label: 'Jack'},
-                                {value: 'lucy', label: 'Lucy'},
-                                {value: 'yiminghe', label: 'Yiminghe'},
-                                {value: 'disabled', label: 'Disabled', disabled: true},
-                            ]}></Select>
+                            <Select multipleSelect minSelectWarning={"Выберите как минимум 2 элемента"} minSelect={2}
+                                    maxSelect={15} placeholder="Select uiXeny" onChange={onChangeSelect}
+                                    onFocus={onFocusSelect}
+                                    onBlur={onBlurSelect}
+                                    defaultValue={[{value: 'jack', label: 'Jack'},
+                                        {value: 'lucy', label: 'Lucy'}]}
+                                    options={[
+                                        {value: 'jack', label: 'Jack'},
+                                        {value: 'lucy', label: 'Lucy'},
+                                        {value: 'yiminghe', label: 'Yiminghe'},
+                                        {value: 'alex', label: 'Alex'},
+                                        {value: 'sophia', label: 'Sophia'},
+                                        {value: 'liam', label: 'Liam'},
+                                        {value: 'olivia', label: 'Olivia'},
+                                        {value: 'william', label: 'William'},
+                                        {value: 'emma', label: 'Emma'},
+                                        {value: 'noah', label: 'Noah'},
+                                        {value: 'ava', label: 'Ava'},
+                                        {value: 'jacob', label: 'Jacob'},
+                                        {value: 'mia', label: 'Mia'},
+                                        {value: 'disabled', label: 'Disabled', disabled: true},
+                                    ]}></Select>
 
-                            <Card title="Title" actions={[<Icon.TextFileOutlined key={1}/>, <Icon.TextFileOutlined key={2}/>,
-                                <Icon.TextFileOutlined key={3}/>, <Icon.TextFileOutlined key={4}/>]} style={{width: 300}}
+                            <Button buttonType="primary" onClick={() => setIsOpenModal(!isOpenModal)}>Open Modal window
+                                here</Button>
+                            <Modal open={isOpenModal} title={"Модальное окно"} footerActions={[<Button onClick={() => setIsOpenModal(false)} key={1}>Cancel</Button>,
+                                <Button buttonType="primary" key={1}>Ok</Button>]}
+                                   onClose={() => setIsOpenModal(false)}>
+                                <h2>Заголовок Модального Окна</h2>
+                                <p>Добро пожаловать в модальное окно! Здесь вы можете разместить любое содержимое, которое хотите отобразить пользователям. Ниже приведены некоторые примеры текста:</p>
+
+                                <h3>Примеры Текста:</h3>
+
+                                <ol>
+                                    <li>
+                                        <p><strong>Абзац:</strong></p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed sem auctor, consectetur metus nec, consequat velit. Nullam sed ligula id nulla malesuada aliquet.</p>
+                                    </li>
+                                    <li>
+                                        <p><strong>Список:</strong></p>
+                                        <ul>
+                                            <li>Пункт списка 1</li>
+                                            <li>Пункт списка 2</li>
+                                            <li>Пункт списка 3</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p><strong>Изображение:</strong></p>
+                                        <img src="https://via.placeholder.com/800x600.png?text=Placeholder+Image" alt="Нейтральная картинка"/>
+                                    </li>
+                                </ol>
+
+                                <p><strong>Инструкции:</strong></p>
+                                <p>Вы можете добавлять любой контент сюда в зависимости от ваших потребностей. Не забудьте включить кнопку или элемент закрытия, чтобы пользователи могли закрыть модальное окно.</p>
+
+                            </Modal>
+
+                            <Icon.CloseOutlined color={"red"} hoverColor={"blue"}/>
+
+                            <Card title="Title"
+                                  actions={[<Icon.TextFileOutlined key={1}/>, <Icon.TextFileOutlined key={2}/>,
+                                      <Icon.TextFileOutlined key={3}/>, <Icon.TextFileOutlined key={4}/>]}
+                                  style={{width: 300}}
                                   extra={<a href="#">More</a>}
                                   avatar={<img
-                                      src={"https://sun9-13.userapi.com/impg/Whb89mqBKvrFOcEJSv1tSxf0a0PslcdOjtvbxg/6icsRB-byDg.jpg?size=2560x1707&quality=96&sign=a316b7b0d237a94ccf407de1a118040f&type=album"}/>}>
+                                      src={"https://sun9-13.userapi.com/impg/Whb89mqBKvrFOcEJSv1tSxf0a0PslcdOjtvbxg/6icsRB-byDg.jpg?size=2560x1707&quality=96&sign=a316b7b0d237a94ccf407de1a118040f&type=album"}
+                                      alt={"s"}/>}>
                                 <p>sdsd</p>
                                 <p>sdjklaaaaaaaaadjsalkdjsdlkjs
                                     asasasasasafoisdyfhqejkhorifuhdsfi
                                     dfuoshfjkapeiouhjfeokdfmekdi</p>
                             </Card>
 
-                            <Card style={{width: 300}} actions={[<Icon.TextFileOutlined key={1}/>, <Icon.TextFileOutlined key={2}/>,
-                                <Icon.TextFileOutlined key={3}/>]} extra={<a href="#">More</a>}
+                            <Card style={{width: 300}}
+                                  actions={[<Icon.TextFileOutlined key={1}/>, <Icon.TextFileOutlined key={2}/>,
+                                      <Icon.TextFileOutlined key={3}/>]} extra={<a href="#">More</a>}
                                   avatar={<img alt="example"
                                                src={"https://sun9-13.userapi.com/impg/Whb89mqBKvrFOcEJSv1tSxf0a0PslcdOjtvbxg/6icsRB-byDg.jpg?size=2560x1707&quality=96&sign=a316b7b0d237a94ccf407de1a118040f&type=album"}/>}></Card>
-                            <Card style={{width: 300}} actions={[<Icon.TextFileOutlined key={1}/>, <Icon.TextFileOutlined key={2}/>,
-                                <Icon.TextFileOutlined key={3}/>]} extra={<a href="#">More</a>}
+                            <Card style={{width: 300}}
+                                  actions={[<Icon.TextFileOutlined key={1}/>, <Icon.TextFileOutlined key={2}/>,
+                                      <Icon.TextFileOutlined key={3}/>]} extra={<a href="#">More</a>}
                                   avatar={<img alt="example"
                                                src={"https://sun9-13.userapi.com/impg/Whb89mqBKvrFOcEJSv1tSxf0a0PslcdOjtvbxg/6icsRB-byDg.jpg?size=2560x1707&quality=96&sign=a316b7b0d237a94ccf407de1a118040f&type=album"}/>}> описание
                                 картинки </Card>
 
                             <Card style={{width: 300}} title="Title" extra={<a href="#">More</a>}
-                                  avatar={<div style={{padding: 24, paddingBottom: 0 }}><img style={{borderRadius: 0}} alt="example"
-                                                                          src={"https://sun9-13.userapi.com/impg/Whb89mqBKvrFOcEJSv1tSxf0a0PslcdOjtvbxg/6icsRB-byDg.jpg?size=2560x1707&quality=96&sign=a316b7b0d237a94ccf407de1a118040f&type=album"}/>
+                                  avatar={<div style={{padding: 24, paddingBottom: 0}}><img style={{borderRadius: 0}}
+                                                                                            alt="example"
+                                                                                            src={"https://sun9-13.userapi.com/impg/Whb89mqBKvrFOcEJSv1tSxf0a0PslcdOjtvbxg/6icsRB-byDg.jpg?size=2560x1707&quality=96&sign=a316b7b0d237a94ccf407de1a118040f&type=album"}/>
                                   </div>} actions={[<Icon.TextFileOutlined key={1}/>, <Icon.TextFileOutlined key={2}/>,
-                                <Icon.TextFileOutlined key={3}/>]}><Card.CardMeta title="Meta title" description="Meta description"/></Card>
+                                <Icon.TextFileOutlined key={3}/>]}><Card.CardMeta title="Meta title"
+                                                                                  description="Meta description"/></Card>
 
                             <TextArea rows={15} cols={5} maxLength={100} placeholder="TextArea"></TextArea>
 
@@ -178,7 +244,6 @@ function App() {
                             </Button.Float>
 
                             <Icon.TextFileOutlined/>
-
 
 
                         </div>

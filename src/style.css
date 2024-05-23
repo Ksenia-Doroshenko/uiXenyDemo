@@ -8,6 +8,8 @@
     --uiXeny-text-subdued-color: #00000073;
     --uiXeny-background-color-white: #fff;
     --uiXeny-background-color-grey : rgba(0, 0, 0, 0.04);
+    --uiXeny-warning-color : rgba(255, 0, 30, 0.76);
+    --svg-color: grey;
 
     /* Цвета для различных состояний и эффектов */
     --uiXeny-hover-color: #3FA9FFFF;
@@ -15,12 +17,15 @@
     --uiXeny-active-checked-color: #1677ff;
     --uiXeny-active-color: #2E53F6FF;
     --uiXeny-selected-color: rgba(63, 169, 255, 0.3);
+    --svg-hover-color: #333;
 
     /* Цвета для теней */
     --uiXeny-shadow-color-1p: rgba(5, 145, 255, 0.1);
     --uiXeny-shadow-color-2p: rgba(5, 145, 255, 0.2);
     --uiXeny-shadow-color-dark: rgba(0, 0, 0, 0.17);
     --uiXeny-shadow-color-light: rgba(0, 0, 0, 0.1);
+    --uiXeny-shadow-color: rgba(0, 0, 0, 0.06);
+
 
     --uiXeny-shadow-float-color: rgba(0, 0, 0, 0.13);
     --uiXeny-shadow-float-color-hover: rgba(63, 169, 255, 0.2);
@@ -56,7 +61,8 @@
     --uiXeny-box-shadow-event-around-2px: 0px 0px 0px 2px var(--uiXeny-shadow-color-2p);
     --uiXeny-box-shadow-bottom: 0 2px 0 var(--uiXeny-shadow-color-1p);
     --uiXeny-box-shadow-button: 0 2px 0 var(--uiXeny-shadow-color-1p);
-    --uiXeny-box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
+    --uiXeny-box-shadow: 3px 3px 10px 6px var(--uiXeny-shadow-color);
+
 
     /* Время анимации переходов */
     --uiXeny-transition-time: 0.2s;
