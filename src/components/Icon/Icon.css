@@ -19,3 +19,12 @@
     width: 24px;
     height: 32px;
 }
+
+.uiXeny-icon svg path {
+    stroke: var(--svg-color, black);
+    transition: var(--uiXeny-transition-time);
+}
+
+.uiXeny-icon svg:hover path {
+    stroke: var(--svg-hover-color, var(--svg-color, black));
+}
