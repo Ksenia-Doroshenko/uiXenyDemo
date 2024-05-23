@@ -5,7 +5,7 @@
     cursor: pointer;
     box-shadow: var(--uiXeny-box-shadow-button);
     transition-duration: var(--uiXeny-transition-time);
-    margin: 8px;
+    /*margin: 8px;*/
     width: fit-content;
 }
 
