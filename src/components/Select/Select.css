@@ -36,19 +36,20 @@
 
 .uiXeny-select__selector_placeholder {
     color: var(--uiXeny-text-subdued-color);
-    margin: 15px 0 15px 20px;
+    margin: 7px 0 7px 12px;
 }
 
 .uiXeny-select .uiXeny-select__selector .uiXeny-select__selector_items {
     display: flex;
     transition: var(--uiXeny-transition-time);
     flex-wrap: wrap;
+    margin: 8px 0 8px 8px;
+    gap: 8px;
 }
 
 .uiXeny-select .uiXeny-select__selector .uiXeny-select__selector_items .uiXeny-select__item--selected {
     background-color: var(--uiXeny-background-color-grey);
     padding: 7px;
-    margin: 8px 0 8px 8px;
     border-radius: var(--uiXeny-border-radius);
     display: flex;
     gap: 7px;
@@ -66,20 +67,24 @@
     color: var(--uiXeny-warning-color);
 }
 
+.uiXeny-select .uiXeny-select__selector_control {
+    display: flex;
+    gap: 8px;
+    padding-left: 10px;
+}
+
 .uiXeny-select .uiXeny-select__selector .uiXeny-select__selector_items .uiXeny-select__item--selected,
-.uiXeny-select .uiXeny-select__selection_counter {
+.uiXeny-select .uiXeny-select__selector_control__selection_counter {
     -webkit-user-select: none;  /* Chrome, Safari, Opera */
     -moz-user-select: none;     /* Firefox */
     -ms-user-select: none;      /* Internet Explorer/Edge */
     user-select: none;          /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
-.uiXeny-select .uiXeny-select__selection_counter {
+.uiXeny-select .uiXeny-select__selector_control__selection_counter {
     color: grey;
-    position: absolute;
-    bottom: 25px;
-    right: 50px;
     text-align: center;
+    align-content: center;
 }
 
 .uiXeny-select .uiXeny-select__content {

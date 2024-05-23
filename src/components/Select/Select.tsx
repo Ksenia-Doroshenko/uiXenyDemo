@@ -296,8 +296,6 @@ export const Select: React.FC<TSelectProps> = ({
                 {warning && <div style={{
                     [warningPosition === 'top' ? 'bottom' : 'top']: '100%',
                 }} className="uiXeny-select__warning">{warning}</div>}
-                {props.maxSelect && <div className="uiXeny-select__selection_counter">
-                    <span> {selectedOptions.length}/{props.maxSelect}</span></div>}
                 <div tabIndex={0} onKeyDown={() => handleKeyDown} ref={selectorRef} className="uiXeny-select__selector"
                      onClick={() => onClickDropdown()}>
                     <div className="uiXeny-select__selector_items">
@@ -341,7 +339,11 @@ export const Select: React.FC<TSelectProps> = ({
                             )
                         }
                     </div>
-                    {isActive ? <Icon.DownOutlined sizeType={"small"}/> : <Icon.UpOutlined sizeType={"small"}/>}
+                    <div className={"uiXeny-select__selector_control"}>
+                        {props.maxSelect && <div className="uiXeny-select__selector_control__selection_counter">
+                            <span> {selectedOptions.length}/{props.maxSelect}</span></div>}
+                        {isActive ? <Icon.DownOutlined sizeType={"small"}/> : <Icon.UpOutlined sizeType={"small"}/>}
+                    </div>
                 </div>
 
                 {isActive && (
