@@ -3,6 +3,8 @@ import "./Password.css";
 import {TInputProps} from "../../types/InputTypes";
 import React, {useState} from "react";
 
+// TODO добавить prefix и postfix в Input
+
 type TInputTypes = "basicInput" | "flyInput" | "underlined";
 type InputCmp = React.FC<TInputProps<TInputTypes>> & {
     Password: React.FC<TInputProps<TInputTypes>>;
@@ -13,7 +15,7 @@ export const Input: InputCmp = ({
                                     sizeType = "medium",
                                     ...props
                                 }: TInputProps<TInputTypes>) => {
-    let classNameArr = ["uiXeny-input"];
+    const classNameArr = ["uiXeny-input"];
 
     switch (type) {
         case "flyInput": {
@@ -73,8 +75,23 @@ const Password: React.FC<TInputProps<TInputTypes>> = ({
                                                           ...props
                                                       }: TInputProps<TInputTypes>) => {
     const [isTextShowed, setIsTextShowed] = useState(false);
-    let classNameArr = ["uiXeny-password uiXeny-input"];
+    const classNameArr = ["uiXeny-password uiXeny-input"];
     props.className && classNameArr.push(props.className);
+
+    switch (sizeType) {
+        case "small": {
+            classNameArr.push("uiXeny-input--sizeSmall");
+            break;
+        }
+        case "large": {
+            classNameArr.push("uiXeny-input--sizeLarge");
+            break;
+        }
+        default: {
+            classNameArr.push("uiXeny-input--sizeMedium");
+            break;
+        }
+    }
 
     switch (type) {
         case "flyInput": {
@@ -108,7 +125,7 @@ const Tel: React.FC<TInputProps<TInputTypes>> = ({
                                                      sizeType = "medium",
                                                      ...props
                                                  }: TInputProps<TInputTypes>) => {
-    let classNameArr = ["uiXeny-tel uiXeny-input"];
+    const classNameArr = ["uiXeny-tel uiXeny-input"];
     props.className && classNameArr.push(props.className);
 
     switch (type) {
@@ -124,6 +141,21 @@ const Tel: React.FC<TInputProps<TInputTypes>> = ({
 
         default: {
             classNameArr.push("uiXeny-input--basicInput");
+            break;
+        }
+    }
+
+    switch (sizeType) {
+        case "small": {
+            classNameArr.push("uiXeny-input--sizeSmall");
+            break;
+        }
+        case "large": {
+            classNameArr.push("uiXeny-input--sizeLarge");
+            break;
+        }
+        default: {
+            classNameArr.push("uiXeny-input--sizeMedium");
             break;
         }
     }
