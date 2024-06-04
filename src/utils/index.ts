@@ -1,6 +1,6 @@
 export * from './createDate';
 export * from './formatDate';
-export * from './getMonthesNames';
+export * from './getMonthsNames.ts';
 export * from './getWeekDaysNames';
 export * from './getWeekNumber';
 export * from './checkIsToday';

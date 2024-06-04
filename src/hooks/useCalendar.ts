@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {
-  getMonthesNames,
+  getMonthsNames,
   createMonth,
   getWeekDaysNames,
   getMonthNumberOfDays,
@@ -27,7 +27,7 @@ export const useCalendar = ({
   selectedDate: date,
   firstWeekDayNumber = 2
 }: UseCalendarParams) => {
-  const [mode, setMode] = React.useState<'days' | 'monthes' | 'years'>('days');
+  const [mode, setMode] = React.useState<'days' | 'months' | 'years'>('days');
   const [selectedDay, setSelectedDay] = React.useState(createDate({ date }));
   const [selectedMonth, setSelectedMonth] = React.useState(
     createMonth({ date: new Date(selectedDay.year, selectedDay.monthIndex), locale })
@@ -37,7 +37,7 @@ export const useCalendar = ({
     getYearsInterval(selectedDay.year)
   );
 
-  const monthesNames = React.useMemo(() => getMonthesNames(locale), []);
+  const monthsNames = React.useMemo(() => getMonthsNames(locale), []);
   const weekDaysNames = React.useMemo(() => getWeekDaysNames(firstWeekDayNumber, locale), []);
 
   const days = React.useMemo(() => selectedMonth.createMonthDays(), [selectedMonth, selectedYear]);
@@ -98,13 +98,13 @@ export const useCalendar = ({
       return setSelectedYearsInterval(getYearsInterval(selectedYearsInterval[0] + 10));
     }
 
-    if (mode === 'monthes' && direction === 'left') {
+    if (mode === 'months' && direction === 'left') {
       const year = selectedYear - 1;
       if (!selectedYearsInterval.includes(year)) setSelectedYearsInterval(getYearsInterval(year));
       return setSelectedYear(selectedYear - 1);
     }
 
-    if (mode === 'monthes' && direction === 'right') {
+    if (mode === 'months' && direction === 'right') {
       const year = selectedYear + 1;
       if (!selectedYearsInterval.includes(year)) setSelectedYearsInterval(getYearsInterval(year));
       return setSelectedYear(selectedYear + 1);
@@ -140,7 +140,7 @@ export const useCalendar = ({
       mode,
       calendarDays,
       weekDaysNames,
-      monthesNames,
+      monthsNames: monthsNames,
       selectedDay,
       selectedMonth,
       selectedYear,

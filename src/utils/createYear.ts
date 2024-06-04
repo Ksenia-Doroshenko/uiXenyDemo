@@ -21,18 +21,18 @@ export const createYear = (params?: CreateYearParams) => {
   const getMonthDays = (monthIndex: number) =>
     createMonth({ date: new Date(year, monthIndex), locale }).createMonthDays();
 
-  const createYearMonthes = () => {
-    const monthes = [];
+  const createYearMonths = () => {
+    const months = [];
 
     for (let i = 0; i <= monthCount - 1; i += 1) {
-      monthes[i] = getMonthDays(i);
+      months[i] = getMonthDays(i);
     }
 
-    return monthes;
+    return months;
   };
 
   return {
-    createYearMonthes,
+    createYearMonths,
     month,
     year
   };

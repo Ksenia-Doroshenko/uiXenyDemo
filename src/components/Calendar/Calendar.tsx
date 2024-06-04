@@ -35,11 +35,11 @@ export const Calendar: React.FC<CalendarProps> = ({
           onClick={() => functions.onClickArrow('left')}
         />
         {state.mode === 'days' && (
-          <div aria-hidden onClick={() => functions.setMode('monthes')}>
-            {state.monthesNames[state.selectedMonth.monthIndex].month} {state.selectedYear}
+          <div aria-hidden onClick={() => functions.setMode('months')}>
+            {state.monthsNames[state.selectedMonth.monthIndex].month} {state.selectedYear}
           </div>
         )}
-        {state.mode === 'monthes' && (
+        {state.mode === 'months' && (
           <div aria-hidden onClick={() => functions.setMode('years')}>
             {state.selectedYear}
           </div>
@@ -93,20 +93,20 @@ export const Calendar: React.FC<CalendarProps> = ({
           </>
         )}
 
-        {state.mode === 'monthes' && (
+        {state.mode === 'months' && (
           <div className='calendar__pick__items__container'>
-            {state.monthesNames.map((monthesName) => {
+            {state.monthsNames.map((monthsName) => {
               const isCurrentMonth =
-                new Date().getMonth() === monthesName.monthIndex &&
+                new Date().getMonth() === monthsName.monthIndex &&
                 state.selectedYear === new Date().getFullYear();
-              const isSelectedMonth = monthesName.monthIndex === state.selectedMonth.monthIndex;
+              const isSelectedMonth = monthsName.monthIndex === state.selectedMonth.monthIndex;
 
               return (
                 <div
-                  key={monthesName.month}
+                  key={monthsName.month}
                   aria-hidden
                   onClick={() => {
-                    functions.setSelectedMonthByIndex(monthesName.monthIndex);
+                    functions.setSelectedMonthByIndex(monthsName.monthIndex);
                     functions.setMode('days');
                   }}
                   className={[
@@ -115,7 +115,7 @@ export const Calendar: React.FC<CalendarProps> = ({
                     isCurrentMonth ? 'calendar__today__item' : ''
                   ].join(' ')}
                 >
-                  {monthesName.monthShort}
+                  {monthsName.monthShort}
                 </div>
               );
             })}
@@ -135,7 +135,7 @@ export const Calendar: React.FC<CalendarProps> = ({
                   aria-hidden
                   onClick={() => {
                     functions.setSelectedYear(year);
-                    functions.setMode('monthes');
+                    functions.setMode('months');
                   }}
                   className={[
                     'calendar__pick__item',
