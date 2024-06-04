@@ -46,7 +46,7 @@ const TextFileOutlinedSVG: React.FC<{ color: string | undefined, hoverColor: str
 };
 
 export const Icon: IconCmp = ({sizeType = "medium", onClick, color, hoverColor, ...props}: TIconProps) => {
-    let classNameArr = ["uiXeny-icon"];
+    const classNameArr = ["uiXeny-icon"];
 
     switch (sizeType) {
         case "small": {
@@ -80,7 +80,7 @@ const TextFileOutlined: React.FC<TIconProps> = ({
                                                     hoverColor,
                                                     ...props
                                                 }: TIconProps) => {
-    let classNameArr = ["uiXeny-icon uiXeny-icon_TextFileOutlined"];
+    const classNameArr = ["uiXeny-icon uiXeny-icon_TextFileOutlined"];
     props.className && classNameArr.push(props.className);
 
     switch (sizeType) {
@@ -138,7 +138,7 @@ const DownOutlined: React.FC<TIconProps> = ({
                                                 hoverColor,
                                                 ...props
                                             }: TIconProps) => {
-    let classNameArr = ["uiXeny-icon uiXeny-icon_DownOutlined"];
+    const classNameArr = ["uiXeny-icon uiXeny-icon_DownOutlined"];
 
     switch (sizeType) {
         case "small": {
@@ -191,7 +191,7 @@ const UpOutlinedSVG: React.FC<{ color: string | undefined, hoverColor: string | 
 };
 
 const UpOutlined: React.FC<TIconProps> = ({sizeType = "medium", onClick, color, hoverColor, ...props}: TIconProps) => {
-    let classNameArr = ["uiXeny-icon uiXeny-icon_UpOutlined"];
+    const classNameArr = ["uiXeny-icon uiXeny-icon_UpOutlined"];
 
     switch (sizeType) {
         case "small": {
@@ -254,7 +254,7 @@ const CloseOutlined: React.FC<TIconProps> = ({
                                                  hoverColor,
                                                  ...props
                                              }: TIconProps) => {
-    let classNameArr = ["uiXeny-icon uiXeny-icon_CloseOutlined"];
+    const classNameArr = ["uiXeny-icon uiXeny-icon_CloseOutlined"];
 
     switch (sizeType) {
         case "small": {
@@ -281,7 +281,7 @@ const CloseOutlined: React.FC<TIconProps> = ({
             <CloseOutlinedSVG color={color} hoverColor={hoverColor}/>
         </div>
     )
-}
+};
 
 Icon.TextFileOutlined = TextFileOutlined;
 Icon.DownOutlined = DownOutlined;

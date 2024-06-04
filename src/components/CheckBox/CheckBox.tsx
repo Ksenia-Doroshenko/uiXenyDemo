@@ -4,7 +4,7 @@ import {TInputProps} from "../../types/InputTypes";
 type TCheckBoxTypes = "default" | "checkmark" | "checkmark--filled" | "favoriteIcon" | "bookmarkIcon";
 
 export const CheckBox = ({type = "default", sizeType = "medium", children, ...props}: TInputProps<TCheckBoxTypes>) => {
-    let classNameArr = ["uiXeny-checkBox"];
+    const classNameArr = ["uiXeny-checkBox"];
 
     switch (type) {
         case "checkmark": {
