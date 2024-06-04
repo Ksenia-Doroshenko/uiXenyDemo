@@ -11,6 +11,7 @@ import {ThemeProvider} from "./contexts/ThemeContext";
 import Card from "./components/Card/Card";
 import Select from "./components/Select/Select";
 import Modal from "./components/Modal/Modal";
+import DatePicker from "./components/DatePicker/DatePicker";
 
 
 function App() {
@@ -243,6 +244,10 @@ function App() {
                             </Button.Float>
 
                             <Icon.TextFileOutlined/>
+
+                            <DatePicker onChange={date => {
+                                console.log(date)
+                            }}/>
 
 
                         </div>

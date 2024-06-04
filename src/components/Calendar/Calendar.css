@@ -34,8 +34,6 @@
   width: 5px;
   height: 10px;
   cursor: pointer;
-  background-image: var(--images-arrow);
-  transform: rotate(-180deg);
 }
 
 .calendar__body {

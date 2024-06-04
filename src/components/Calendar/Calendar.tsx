@@ -1,9 +1,9 @@
 import React from 'react';
-
-import { checkDateIsEqual, checkIsToday } from '../../utils';
-import { useCalendar } from '../../hooks/useCalendar';
-
 import './Calendar.css';
+
+import {checkDateIsEqual, checkIsToday} from '../../utils';
+import {useCalendar} from '../../hooks/useCalendar';
+import Icon from "../Icon/Icon.tsx";
 
 interface CalendarProps {
   locale?: string;
@@ -31,9 +31,11 @@ export const Calendar: React.FC<CalendarProps> = ({
       <div className='calendar__header'>
         <div
           aria-hidden
-          className='calendar__header__arrow__left'
           onClick={() => functions.onClickArrow('left')}
-        />
+        >
+          <Icon.LeftArrow style={{height: '10px'}}/>
+
+        </div>
         {state.mode === 'days' && (
           <div aria-hidden onClick={() => functions.setMode('months')}>
             {state.monthsNames[state.selectedMonth.monthIndex].month} {state.selectedYear}
@@ -52,9 +54,11 @@ export const Calendar: React.FC<CalendarProps> = ({
         )}
         <div
           aria-hidden
-          className='calendar__header__arrow__right'
           onClick={() => functions.onClickArrow('right')}
-        />
+        >
+          <Icon.RightArrow style={{height: '10px'}}/>
+
+        </div>
       </div>
       <div className='calendar__body'>
         {state.mode === 'days' && (

@@ -1,7 +1,8 @@
 import React from 'react';
-import './index.scss';
-import { Calendar } from '../Calendar/Calendar';
-import { formatDate } from '../../utils';
+import './DatePicker.css';
+import {Calendar} from '../Calendar/Calendar';
+import {formatDate} from '../../utils';
+import Input from "../Input/Input.tsx";
 
 const CalendarComponent = () => (
   <svg
@@ -102,8 +103,13 @@ const CalendarComponent = () => (
   </svg>
 );
 
-const DatePicker = () => {
-  console.log('donne');
+type TDatePickerProps = {
+  onChange?: (date: Date) => void,
+  value?: Date,
+}
+
+const DatePicker = (props: TDatePickerProps) => {
+  const {onChange, value} = props;
   const [selectedDate, setSelectedDay] = React.useState(new Date());
 
   const [isCalendarOpen, setCalendarOpen] = React.useState(false);
@@ -114,9 +120,9 @@ const DatePicker = () => {
 
   return (
     <div className='datepicker_wrapper'>
-      <input
-        className='datepicker_wrapper__input'
-        value={formatDate(selectedDate, 'DDD DD MMM YYYY')}
+      <Input
+        // className='datepicker_wrapper__input'
+        value={formatDate(value ? value : selectedDate, 'DDD DD MMM YYYY')}
       />
       <button className='datepicker_wrapper__icon' onClick={onClickCalendar}>
         <CalendarComponent />
@@ -124,7 +130,10 @@ const DatePicker = () => {
       <Calendar
         open={isCalendarOpen}
         selectedDate={selectedDate}
-        selectDate={(date) => setSelectedDay(date)}
+        selectDate={(date) => {
+          onChange?.(date);
+          setSelectedDay(date);
+        }}
       />
     </div>
   );
