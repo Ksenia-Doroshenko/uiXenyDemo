@@ -23,7 +23,7 @@
     box-shadow: var(--uiXeny-box-shadow-float);
     border-radius: 5px;
     position: fixed;
-    top: 100px;
+    top: 0;
     margin: 0 auto;
     left: 0;
     transition: var(--uiXeny-transition-time);
