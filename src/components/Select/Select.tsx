@@ -3,6 +3,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import "./Select.css";
 import Icon from "../Icon/Icon";
+import {generateUUID} from "../../utils/generateUUID.ts";
 
 type TSelectProps = (SingleSelectProps | MultipleSelectProps) & {
     children?: React.ReactElement | string;
@@ -45,13 +46,12 @@ type TOptionType = {
 
 export const Select: React.FC<TSelectProps> = ({
                                                    sizeType = "medium",
-                                                   children,
                                                    onChange,
                                                    onFocus,
                                                    onBlur,
                                                    ...props
                                                }: TSelectProps) => {
-    let classNameArr = ["uiXeny-select"];
+    const classNameArr = ["uiXeny-select"];
 
     const [isActive, setIsActive] = useState(false);
     const [selected, setSelected] = useState<TOptionType | null>(null);
@@ -189,7 +189,7 @@ export const Select: React.FC<TSelectProps> = ({
         }
     }, [props.defaultValue, props.options, props.multipleSelect]);
 
-    const handleRemoveOptionClick = (option: any) => (event: React.MouseEvent) => {
+    const handleRemoveOptionClick = (option: TOptionType) => (event: React.MouseEvent) => {
         event.stopPropagation();
         setSelectedOptions(prevOptions => {
             const newSelectedOptions = prevOptions.filter(opt => opt.value !== option.value);
@@ -262,10 +262,10 @@ export const Select: React.FC<TSelectProps> = ({
                 setWarningPosition('top');
             }
         }
-    }, [selectorRef.current, menuRef.current]);
+    }, []);
 
-    function contains(arr: any[], elem: any): boolean {
-        return arr.find((i: any) => i === elem) !== undefined;
+    function contains(arr: TOptionType[], elem: TOptionType | null): boolean {
+        return arr.find((el: TOptionType) => el === elem) !== undefined;
     }
 
     switch (sizeType) {
@@ -317,7 +317,7 @@ export const Select: React.FC<TSelectProps> = ({
 
                             ) : (selectedOptions.length > 0 ?
                                     ((selectedOptions.map((item) => (
-                                            <div key={item.value}
+                                            <div key={generateUUID()}
                                                  className="uiXeny-select__item--selected">
                                                 {item?.label}
                                                 <Icon.CloseOutlined onClick={handleRemoveOptionClick(item)}
@@ -325,7 +325,7 @@ export const Select: React.FC<TSelectProps> = ({
                                             </div>
                                         ))) ||
                                         (props.defaultValue ? props.defaultValue.map((item: TOptionType) => (
-                                            <div key={item.value}
+                                            <div key={generateUUID()}
                                                  className="uiXeny-select__item--selected">
                                                 {item?.label}
                                                 <Icon.CloseOutlined onClick={handleRemoveOptionClick(item)}
@@ -352,7 +352,7 @@ export const Select: React.FC<TSelectProps> = ({
                         [menuPosition === 'top' ? 'bottom' : 'top']: '100%',
                     }} ref={menuRef} className="uiXeny-select__content">
                         {props.options ? props.options.map((option, index) => (
-                            <div key={option.value} onMouseEnter={() => !option.disabled && setHighlightedIndex(index)}
+                            <div key={generateUUID()} onMouseEnter={() => !option.disabled && setHighlightedIndex(index)}
                                  onClick={() => handleSelectOption(option)}
                                  className={"uiXeny-select__item" +
                                      (highlightedIndex === index ? " uiXeny-select__item--highlighted" : "") +
