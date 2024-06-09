@@ -20,7 +20,7 @@ function App() {
     const {currentTheme, changeTheme} = useTheme();
     console.log(currentTheme);
     const onClickTheme = () => {
-        changeTheme(currentTheme.name === 'dark' ? 'yandex': 'dark')
+        changeTheme(currentTheme.name === 'dark' ? 'default': 'dark')
     }
 
     const onChangeCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {

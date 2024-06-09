@@ -8,7 +8,7 @@ export const darkTheme: TTheme = {
     disabledColor: "lightgrey",
     textColor: "#ededed",
     textSubduedColor: "rgba(230,230,230,0.45)",
-    backgroundColorWhite: "rgba(1,7,29,0.63)",
+    backgroundColorWhite: "rgb(21,29,57)",
     backgroundColorBody: "rgba(1,7,29)",
     backgroundColorGrey: "rgb(190,190,190)",
     dangerColor: "rgba(255, 0, 30)",
