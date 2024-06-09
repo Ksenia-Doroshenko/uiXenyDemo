@@ -11,7 +11,7 @@ import {ThemeProvider} from "./contexts/ThemeContext";
 import Card from "./components/Card/Card";
 import Select from "./components/Select/Select";
 import Modal from "./components/Modal/Modal";
-import {useTheme} from "./hooks/useTheme.ts";
+import {useTheme} from "./hooks/useTheme";
 import DatePicker from "./components/DatePicker/DatePicker";
 
 
