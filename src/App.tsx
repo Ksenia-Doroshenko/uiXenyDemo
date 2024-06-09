@@ -12,6 +12,7 @@ import Card from "./components/Card/Card";
 import Select from "./components/Select/Select";
 import Modal from "./components/Modal/Modal";
 import {useTheme} from "./hooks/useTheme.ts";
+import DatePicker from "./components/DatePicker/DatePicker";
 
 
 function App() {
@@ -62,9 +63,10 @@ function App() {
                         gridTemplateColumns: "1fr 1fr 1fr",
                         width: "50%",
                         justifyItems: "center",
-                        padding: "20px"
+                        padding: "20px",
+                        gap: "5px"
                     }}>
-                        <Button buttonType="default" className="dsd" sizeType="small">Default Button</Button>
+                        <Button  buttonType="default" className="dsd" sizeType="small">Default Button</Button>
                         <Button buttonType="primary" className="dsdd" sizeType="small">Primary Button</Button>
                         <Button buttonType="link" className="dsdd" sizeType="small">Link Button</Button>
 
@@ -213,10 +215,8 @@ function App() {
                                   avatar={<img
                                       src={"https://sun9-13.userapi.com/impg/Whb89mqBKvrFOcEJSv1tSxf0a0PslcdOjtvbxg/6icsRB-byDg.jpg?size=2560x1707&quality=96&sign=a316b7b0d237a94ccf407de1a118040f&type=album"}
                                       alt={"s"}/>}>
-                                <p>sdsd</p>
-                                <p>sdjklaaaaaaaaadjsalkdjsdlkjs
-                                    asasasasasafoisdyfhqejkhorifuhdsfi
-                                    dfuoshfjkapeiouhjfeokdfmekdi</p>
+                                <p style={{fontWeight: "bold"}}>title</p>
+                                <p>demo text</p>
                             </Card>
 
                             <Card style={{width: 300}}
@@ -251,6 +251,10 @@ function App() {
                             </Button.Float>
 
                             <Icon.TextFileOutlined/>
+
+                            <DatePicker onChange={date => {
+                                console.log(date)
+                            }}/>
 
 
                         </div>

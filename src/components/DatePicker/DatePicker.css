@@ -1,0 +1,23 @@
+.datepicker_wrapper {
+  position: relative;
+}
+.datepicker_wrapper__input {
+  padding: 8px 24px 8px 8px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+.datepicker_wrapper__icon {
+  top: 18px;
+  position: absolute;
+  right: 1px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.datepicker_wrapper__icon svg {
+  max-height: 20px;
+  max-width: 20px;
+}
+
+/*# sourceMappingURL=DatePicker.css.map */

@@ -16,6 +16,8 @@ type IconCmp = React.FC<TIconProps> & {
     DownOutlined: React.FC<TIconProps>;
     UpOutlined: React.FC<TIconProps>;
     CloseOutlined: React.FC<TIconProps>;
+    LeftArrow: React.FC<TIconProps>;
+    RightArrow: React.FC<TIconProps>;
 };
 
 const strokeColor = '#333';
@@ -281,9 +283,137 @@ const CloseOutlined: React.FC<TIconProps> = ({
     )
 };
 
+const LeftIconSVG: React.FC<{ color: string | undefined, hoverColor: string | undefined }> = ({
+                                                                                                    color,
+                                                                                                    hoverColor
+                                                                                                }) => {
+    // Определяем CSS переменные
+    const svgCustomProperties = {
+        '--svg-color': color, // Используем значение color или значение по умолчанию
+        '--svg-hover-color': hoverColor  // Используем значение hoverColor или значение по умолчанию
+    };
+
+    // Определяем остальные стили
+    const svgStyle: React.CSSProperties = {
+        stroke: 'var(--svg-color)' || 'var(--svg-hover-color, var(--svg-color, black))'// Используем CSS переменную для цвета обводки
+    };
+
+    // Объединяем стили и CSS переменные
+    const combinedStyle = {...svgStyle, ...svgCustomProperties};
+
+    return (
+        <svg width="14" height="23" viewBox="0 0 14 23" fill="none" xmlns="http://www.w3.org/2000/svg" style={combinedStyle}>
+            <path d="M13 1L2 11.5L13 22" stroke="white" stroke-width="2"/>
+        </svg>
+    );
+};
+
+
+const LeftArrow: React.FC<TIconProps> = ({
+                                                 sizeType = "medium",
+                                                 onClick,
+                                                 color,
+                                                 hoverColor,
+                                                 ...props
+                                             }: TIconProps) => {
+    const classNameArr = ["uiXeny-icon uiXeny-icon_LeftArrow"];
+
+    switch (sizeType) {
+        case "small": {
+            classNameArr.push("uiXeny-icon--sizeSmall");
+            break;
+        }
+        case "large": {
+            classNameArr.push("uiXeny-icon--sizeLarge");
+            break;
+        }
+        default: {
+            classNameArr.push("uiXeny-icon--sizeMedium");
+            break;
+        }
+    }
+
+    props.className && classNameArr.push(props.className);
+
+    // console.log(classNameArr);
+    // console.log(classNameArr.join(' '));
+
+    return (
+        <div {...props} onClick={onClick} className={classNameArr.join(' ')}>
+            <LeftIconSVG color={color} hoverColor={hoverColor}/>
+        </div>
+    )
+};
+
+
+const RightArrowSVG: React.FC<{ color: string | undefined, hoverColor: string | undefined }> = ({
+                                                                                                  color,
+                                                                                                  hoverColor
+                                                                                              }) => {
+    // Определяем CSS переменные
+    const svgCustomProperties = {
+        '--svg-color': color, // Используем значение color или значение по умолчанию
+        '--svg-hover-color': hoverColor  // Используем значение hoverColor или значение по умолчанию
+    };
+
+    // Определяем остальные стили
+    const svgStyle: React.CSSProperties = {
+        stroke: 'var(--svg-color)' || 'var(--svg-hover-color, var(--svg-color, black))'// Используем CSS переменную для цвета обводки
+    };
+
+    // Объединяем стили и CSS переменные
+    const combinedStyle = {...svgStyle, ...svgCustomProperties};
+
+    return (
+        <svg width="14" height="23" viewBox="0 0 14 23" fill="none" xmlns="http://www.w3.org/2000/svg" style={combinedStyle}>
+            <path d="M1 1L12 11.5L1 22" stroke="white" stroke-width="2"/>
+        </svg>
+
+    );
+};
+
+const RightArrow: React.FC<TIconProps> = ({
+                                             sizeType = "medium",
+                                             onClick,
+                                             color,
+                                             hoverColor,
+                                             ...props
+                                         }: TIconProps) => {
+    const classNameArr = ["uiXeny-icon uiXeny-icon_RightArrow"];
+
+    switch (sizeType) {
+        case "small": {
+            classNameArr.push("uiXeny-icon--sizeSmall");
+            break;
+        }
+        case "large": {
+            classNameArr.push("uiXeny-icon--sizeLarge");
+            break;
+        }
+        default: {
+            classNameArr.push("uiXeny-icon--sizeMedium");
+            break;
+        }
+    }
+
+    props.className && classNameArr.push(props.className);
+
+    // console.log(classNameArr);
+    // console.log(classNameArr.join(' '));
+
+    return (
+        <div {...props} onClick={onClick} className={classNameArr.join(' ')}>
+            <RightArrowSVG color={color} hoverColor={hoverColor}/>
+        </div>
+    )
+};
+
+
 Icon.TextFileOutlined = TextFileOutlined;
 Icon.DownOutlined = DownOutlined;
 Icon.UpOutlined = UpOutlined;
 Icon.CloseOutlined = CloseOutlined;
+Icon.LeftArrow = LeftArrow;
+Icon.RightArrow = RightArrow;
 
 export default Icon;
