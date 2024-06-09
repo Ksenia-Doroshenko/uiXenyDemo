@@ -1,5 +1,6 @@
 import React from "react";
 import "./Icon.css"
+import {TSize} from "../../types/GeneralTypes";
 
 type TIconProps = {
     className?: string;
@@ -272,9 +273,6 @@ const CloseOutlined: React.FC<TIconProps> = ({
     }
 
     props.className && classNameArr.push(props.className);
-
-    console.log(classNameArr);
-    console.log(classNameArr.join(' '));
 
     return (
         <div {...props} onClick={onClick} className={classNameArr.join(' ')}>

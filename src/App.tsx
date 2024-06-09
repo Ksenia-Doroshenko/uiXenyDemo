@@ -11,10 +11,18 @@ import {ThemeProvider} from "./contexts/ThemeContext";
 import Card from "./components/Card/Card";
 import Select from "./components/Select/Select";
 import Modal from "./components/Modal/Modal";
+import {useTheme} from "./components/ThemeProvider/ThemeProvider.tsx";
 
 
 function App() {
-    const [isChecked, setChecked] = useState(false)
+    const [isChecked, setChecked] = useState(false);
+    const {themeName, setThemeName} = useTheme();
+    console.log(themeName);
+
+    const onClickTheme = () => {
+        setThemeName(themeName === 'dark' ? 'default': 'dark')
+    }
+
     const onChangeCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
         setChecked(e.target.checked);
     }
@@ -234,7 +242,7 @@ function App() {
 
                             <TextArea rows={15} cols={5} maxLength={100} placeholder="TextArea"></TextArea>
 
-                            <Button.Float buttonType={"primary"}>
+                            <Button.Float buttonType={"primary"} onClick={onClickTheme}>
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                      aria-hidden="true" role="img" className="iconify iconify--logos" width="35.93"
                                      height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 228">

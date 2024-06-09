@@ -1,6 +1,7 @@
 import React, {ButtonHTMLAttributes, DetailedHTMLProps, ReactNode} from "react";
 import "./Button.css";
 import "./FloatButton.css";
+import {TSize} from "../../types/GeneralTypes";
 
 type TButtonTypes = "default" | "primary" | "link";
 type ButtonCmp = React.FC<TButtonProps> & {
@@ -12,6 +13,7 @@ type TButtonProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, H
     children?: React.ReactElement | string;
     className?: string;
     sizeType?: TSize;
+    htmlType?: 'submit' | 'reset' | 'button' | undefined;
 };
 
 type TFloatButtonShapes = "circle" | "square";
@@ -21,8 +23,8 @@ type TFloatButtonProps = {
     icon?: ReactNode;
 }
 
-export const Button: ButtonCmp = ({buttonType = "default", sizeType = "medium", children, ...props}: TButtonProps) => {
-    let classNameArr = ["uiXeny-button"];
+export const Button: ButtonCmp = ({buttonType = "default", sizeType = "medium", children, htmlType = 'button', ...props}: TButtonProps) => {
+    const classNameArr = ["uiXeny-button"];
 
     switch (buttonType) {
         case "primary": {
@@ -60,17 +62,18 @@ export const Button: ButtonCmp = ({buttonType = "default", sizeType = "medium", 
 
     props.className && classNameArr.push(props.className);
 
-    return React.createElement("button", {...props, className: classNameArr.join(' ')}, children);
+    return React.createElement("button", {...props, className: classNameArr.join(' '), type: htmlType}, children);
 };
 
 const Float: React.FC<TButtonProps & TFloatButtonProps> = ({
-                                                        buttonType = "default",
-                                                        children,
-                                                        shape,
-                                                        ...props
-                                                    }) => {
+                                                               buttonType = "default",
+                                                               children,
+                                                               shape,
+                                                               htmlType = 'button',
+                                                               ...props
+                                                           }) => {
 
-    let classNameArr = ["uiXeny-button uiXeny-float-button"];
+    const classNameArr = ["uiXeny-button uiXeny-float-button"];
 
     switch (buttonType) {
         case "primary": {
@@ -97,7 +100,7 @@ const Float: React.FC<TButtonProps & TFloatButtonProps> = ({
     props.className && classNameArr.push(props.className);
 
     return (
-        <button className={classNameArr.join(' ')} {...props} children={children}></button>
+        <button className={classNameArr.join(' ')} {...props} type={htmlType} children={children}></button>
     )
 };
 
