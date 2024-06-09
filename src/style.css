@@ -77,49 +77,49 @@ body{
      }
 
 /* Светлая тема */
-.light-theme {
-    /* Основные цвета */
-    --uiXeny-primary-color: #0570FF;
-    --uiXeny-secondary-color: #3FA9FF;
-    --uiXeny-text-color: #333;
-    --uiXeny-background-color: #FFF;
+/*.light-theme {*/
+/*    !* Основные цвета *!*/
+/*    --uiXeny-primary-color: #0570FF;*/
+/*    --uiXeny-secondary-color: #3FA9FF;*/
+/*    --uiXeny-text-color: #333;*/
+/*    --uiXeny-background-color: #FFF;*/
 
-    --uiXeny-checkbox-icon-background-color: rgba(5, 145, 255, 0.2);
-    --uiXeny-toggle-switch-unchecked-color: #ccc;
-    --uiXeny-toggle-switch-unchecked-hover-color: darkgrey;
+/*    --uiXeny-checkbox-icon-background-color: rgba(5, 145, 255, 0.2);*/
+/*    --uiXeny-toggle-switch-unchecked-color: #ccc;*/
+/*    --uiXeny-toggle-switch-unchecked-hover-color: darkgrey;*/
 
-    /* Цвета теней */
-    --uiXeny-box-shadow-float-color: rgba(0, 0, 0, 0.13);
-    --uiXeny-box-shadow-float-color-active: rgba(46, 83, 246, 0.2);
-    --uiXeny-box-shadow-float-color-dark: rgba(0, 0, 0, 0.17);
-    --uiXeny-box-shadow-float-color-dark-active: rgba(46, 83, 246, 0.24);
-    --uiXeny-box-shadow-float-color-light: rgba(0, 0, 0, 0.1);
-    --uiXeny-box-shadow-float-color-light-active: rgba(46, 83, 246, 0.2);
+/*    !* Цвета теней *!*/
+/*    --uiXeny-box-shadow-float-color: rgba(0, 0, 0, 0.13);*/
+/*    --uiXeny-box-shadow-float-color-active: rgba(46, 83, 246, 0.2);*/
+/*    --uiXeny-box-shadow-float-color-dark: rgba(0, 0, 0, 0.17);*/
+/*    --uiXeny-box-shadow-float-color-dark-active: rgba(46, 83, 246, 0.24);*/
+/*    --uiXeny-box-shadow-float-color-light: rgba(0, 0, 0, 0.1);*/
+/*    --uiXeny-box-shadow-float-color-light-active: rgba(46, 83, 246, 0.2);*/
 
-    /* Границы компонентов */
-    --uiXeny-border-color: #AFC1D0FF; /* Универсальный цвет границ */
-}
+/*    !* Границы компонентов *!*/
+/*    --uiXeny-border-color: #AFC1D0FF; !* Универсальный цвет границ *!*/
+/*}*/
 
- /*Тёмная тема*/
-.dark-theme {
-    /* Основные цвета */
-    --uiXeny-primary-color: #90CAF9;
-    --uiXeny-secondary-color: #64B5F6;
-    --uiXeny-text-color: #EEE;
-    --uiXeny-background-color: #263238;
+/* !*Тёмная тема*!*/
+/*.dark-theme {*/
+/*    !* Основные цвета *!*/
+/*    --uiXeny-primary-color: #90CAF9;*/
+/*    --uiXeny-secondary-color: #64B5F6;*/
+/*    --uiXeny-text-color: #EEE;*/
+/*    --uiXeny-background-color: #263238;*/
 
-    --uiXeny-checkbox-icon-background-color: rgba(5, 145, 255, 0.2);
-    --uiXeny-toggle-switch-unchecked-color: #ccc;
-    --uiXeny-toggle-switch-unchecked-hover-color: darkgrey;
+/*    --uiXeny-checkbox-icon-background-color: rgba(5, 145, 255, 0.2);*/
+/*    --uiXeny-toggle-switch-unchecked-color: #ccc;*/
+/*    --uiXeny-toggle-switch-unchecked-hover-color: darkgrey;*/
 
-    /* Цвета теней */
-    --uiXeny-box-shadow-float-color: rgba(0, 0, 0, 0.3);
-    --uiXeny-box-shadow-float-color-hover: rgba(255, 255, 255, 0.2);
-    --uiXeny-box-shadow-float-color-dark: rgba(0, 0, 0, 0.5);
-    --uiXeny-box-shadow-float-color-dark-active: rgba(255, 255, 255, 0.24);
-    --uiXeny-box-shadow-float-color-light: rgba(0, 0, 0, 0.2);
-    --uiXeny-box-shadow-float-color-light-active: rgba(255, 255, 255, 0.3);
+/*    !* Цвета теней *!*/
+/*    --uiXeny-box-shadow-float-color: rgba(0, 0, 0, 0.3);*/
+/*    --uiXeny-box-shadow-float-color-hover: rgba(255, 255, 255, 0.2);*/
+/*    --uiXeny-box-shadow-float-color-dark: rgba(0, 0, 0, 0.5);*/
+/*    --uiXeny-box-shadow-float-color-dark-active: rgba(255, 255, 255, 0.24);*/
+/*    --uiXeny-box-shadow-float-color-light: rgba(0, 0, 0, 0.2);*/
+/*    --uiXeny-box-shadow-float-color-light-active: rgba(255, 255, 255, 0.3);*/
 
-    /* Границы компонентов */
-    --uiXeny-border-color: #546E7A; /* Универсальный цвет границ */
-}
+/*    !* Границы компонентов *!*/
+/*    --uiXeny-border-color: #546E7A; !* Универсальный цвет границ *!*/
+/*}*/

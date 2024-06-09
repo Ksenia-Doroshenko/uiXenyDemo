@@ -27,10 +27,8 @@ export function ThemeProvider({children, initialTheme = defaultTheme, registered
 
     const changeTheme = (themeName: string) => {
         registeredThemes.forEach(theme => {
-            console.log(theme.name)
-            console.log(themeName)
             if (theme.name === themeName) {
-                setCurrentTheme(theme);
+                setCurrentTheme(Object.assign(theme));
             }
         });
     }

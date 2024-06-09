@@ -14,7 +14,6 @@
 
 .uiXeny-card:hover {
     box-shadow: var(--uiXeny-box-shadow-float);
-    border-color: transparent;
 }
 
 .uiXeny-card__head {

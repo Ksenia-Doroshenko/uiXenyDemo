@@ -6,7 +6,7 @@ export const defaultTheme: TTheme = {
     secondaryColor: "#3FA9FF",
     mainColor: "#1677ff",
     disabledColor: "lightgrey",
-    textColor: "#333",
+    textColor: "#2b2b2b",
     textSubduedColor: "#00000073",
     backgroundColorWhite: "#ffffff",
     backgroundColorBody: "#ffffff",
