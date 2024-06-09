@@ -2,32 +2,33 @@
   width: 200px;
   border-radius: 5px;
   text-transform: capitalize;
-  background-color: var(--background-color-calendar);
+  background-color: var(--uiXeny-background-color-white);
+  color: var(--uiXeny-text-color);
   border: none;
   padding: 0;
+  outline: var(--uiXeny-border-1px);
 }
 
 .calendar:focus{
-  border: 1px solid var(--color-additional);;
+  border: none;
 }
 
 .calendar__header {
   position: relative;
   border-radius: 5px 5px 0 0;
-  background-color: var(--background-color-calendar-header);
-  color: var(--color-text);
+  /*background-color: var(--uiXeny-secondary-color);*/
+  color: var(--uiXeny-text-color);
   padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 2px 10px -1px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--uiXeny-shadow-float-color);
 }
 
 .calendar__header__arrow__left {
   width: 5px;
   height: 10px;
-  cursor: pointer;
-  background-image: var(--images-arrow);
+  cursor: pointer;;
 }
 
 .calendar__header__arrow__right {
@@ -73,7 +74,7 @@
 }
 
 .calendar__day:hover {
-  background-color: var(--color-additional7);
+  background-color: var(--uiXeny-primary-color);
 }
 
 .calendar__additional__day {
@@ -93,24 +94,20 @@
 }
 
 .calendar__pick__item:hover {
-  background-color: var(--color-additional7);
-}
-
-.calendar__today__item {
-  background-color: var(--background-color-calendar-header);
+  background-color: var(--uiXeny-secondary-color);
 }
 
 .calendar__selected__item {
   color: var(--color-text);
-  background-color: var(--color-additional);
+  background-color: var(--uiXeny-secondary-color);
 }
 .calendar__selected__item:hover {
-  background-color: var(--color-additional);
+  background-color: var(--uiXeny-primary-color);
 }
 
 .calendar__pick__items__container {
   font-weight: 400;
-  color: var(--color-text);
+  color: var(--uiXeny-text-color);
   text-align: center;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -122,5 +119,5 @@
 .calendar__unchoosable__year {
   font-weight: 300;
   padding: 9px 16px;
-  color: var(--color-placeholder);
+  color: var(--uiXeny-background-color-white);
 }

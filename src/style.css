@@ -1,117 +1,125 @@
-:root {
-    /* Основные цвета */
-    --uiXeny-primary-color: #0570FF;
-    --uiXeny-secondary-color: #3FA9FF;
-    --uiXeny-main-color: #1677ff;
-    --uiXeny-disabled-color: lightgrey;
-    --uiXeny-text-color: #333;
-    --uiXeny-text-subdued-color: #00000073;
-    --uiXeny-background-color-white: #fff;
-    --uiXeny-background-color-grey : rgba(0, 0, 0, 0.04);
-    --uiXeny-warning-color : rgba(255, 0, 30, 0.76);
-    --svg-color: grey;
-
-    /* Цвета для различных состояний и эффектов */
-    --uiXeny-hover-color: #3FA9FFFF;
-    --uiXeny-hover-color-black: rgba(0, 0, 0, .1);
-    --uiXeny-active-checked-color: #1677ff;
-    --uiXeny-active-color: #2E53F6FF;
-    --uiXeny-selected-color: rgba(63, 169, 255, 0.3);
-    --svg-hover-color: #333;
-
-    /* Цвета для теней */
-    --uiXeny-shadow-color-1p: rgba(5, 145, 255, 0.1);
-    --uiXeny-shadow-color-2p: rgba(5, 145, 255, 0.2);
-    --uiXeny-shadow-color-dark: rgba(0, 0, 0, 0.17);
-    --uiXeny-shadow-color-light: rgba(0, 0, 0, 0.1);
-    --uiXeny-shadow-color: rgba(0, 0, 0, 0.06);
-
-
-    --uiXeny-shadow-float-color: rgba(0, 0, 0, 0.13);
-    --uiXeny-shadow-float-color-hover: rgba(63, 169, 255, 0.2);
-    --uiXeny-shadow-float-color-active: rgba(46, 83, 246, 0.2);
-    --uiXeny-shadow-float-color-dark: rgba(0, 0, 0, 0.17);
-    --uiXeny-shadow-float-color-dark-hover: rgba(63, 169, 255, 0.24);
-    --uiXeny-shadow-float-color-dark-active: rgba(46, 83, 246, 0.24);
-    --uiXeny-shadow-float-color-light: rgba(0, 0, 0, 0.1);
-    --uiXeny-shadow-float-color-light-hover: rgba(63, 169, 255, 0.2);
-    --uiXeny-shadow-float-color-light-active: rgba(46, 83, 246, 0.2);
-
-    /* Дополнительные цвета для специфических элементов */
-    --uiXeny-checkbox-icon-event-background-color: #0591FF33;
-    --uiXeny-toggle-switch-unchecked-hover-color: darkgrey;
-    --uiXeny-toggle-switch-unchecked-color: #ccc;
-
-    --uiXeny-box-shadow-float: 0 6px 16px 0 var(--uiXeny-shadow-float-color), 0 3px 6px -4px var(--uiXeny-shadow-float-color-dark), 0 9px 28px 8px var(--uiXeny-shadow-float-color-light);
-    --uiXeny-box-shadow-float-active: 0 6px 16px 0 var(--uiXeny-shadow-float-color-active), 0 3px 6px -4px var(--uiXeny-shadow-float-color-dark-active), 0 9px 28px 8px var(--uiXeny-shadow-float-color-light-active);
-    --uiXeny-box-shadow-float-hover: 0 6px 16px 0 var(--uiXeny-box-shadow-float-color-hover), 0 3px 6px -4px var(--uiXeny-shadow-float-color-dark-hover), 0 9px 28px 8px var(--uiXeny-shadow-float-color-light-active);
-
-    /* Границы компонентов */
-    --uiXeny-border-color: #AFC1D0FF; /* Универсальный цвет границ */
-
-    --uiXeny-border-1px: 1px solid var(--uiXeny-border-color);
-    --uiXeny-border-2px-focus: 1px solid var(--uiXeny-border-color);
-    --uiXeny-border-2px: 2px solid var(--uiXeny-border-color);
-
-    --uiXeny-border-radius: 5px;
-
-    /* Тени */
-    --uiXeny-box-shadow-event-around-5px: 0px 0px 0px 5px var(--uiXeny-shadow-color-2p);
-    --uiXeny-box-shadow-event-around-4px: 0px 0px 0px 4px var(--uiXeny-shadow-color-2p);
-    --uiXeny-box-shadow-event-around-2px: 0px 0px 0px 2px var(--uiXeny-shadow-color-2p);
-    --uiXeny-box-shadow-bottom: 0 2px 0 var(--uiXeny-shadow-color-1p);
-    --uiXeny-box-shadow-button: 0 2px 0 var(--uiXeny-shadow-color-1p);
-    --uiXeny-box-shadow: 3px 3px 10px 6px var(--uiXeny-shadow-color);
-
-
-    /* Время анимации переходов */
-    --uiXeny-transition-time: 0.2s;
+body{
+    background-color: var(--uiXeny-background-color-body);
+    color: var(--uiXeny-text-color);
 }
+
+:root {
+         /* Основные цвета */
+         --uiXeny-primary-color: #0570FF;
+         --uiXeny-secondary-color: #3FA9FF;
+         --uiXeny-main-color: #1677ff;
+        --uiXeny-background-color-body: white;
+         --uiXeny-disabled-color: lightgrey;
+         --uiXeny-text-color: #333;
+         --uiXeny-text-subdued-color: #00000073;
+         --uiXeny-background-color-white: #fff;
+         --uiXeny-background-color-grey : rgba(0, 0, 0, 0.04);
+         --uiXeny-danger-color : rgba(255, 0, 30, 0.76);
+         --uiXeny-warning-color : rgba(255, 179, 0, 0.76);
+         --uiXeny-success-color : rgba(36, 173, 20, 0.76);
+         --svg-color: grey;
+
+         /* Цвета для различных состояний и эффектов */
+         --uiXeny-hover-color: #3FA9FFFF;
+         --uiXeny-hover-color-black: rgba(0, 0, 0, .1);
+         --uiXeny-active-checked-color: #1677ff;
+         --uiXeny-active-color: #2E53F6FF;
+         --uiXeny-selected-color: rgba(63, 169, 255, 0.3);
+         --svg-hover-color: #333;
+
+         /* Цвета для теней */
+         --uiXeny-shadow-color-1p: rgba(5, 145, 255, 0.1);
+         --uiXeny-shadow-color-2p: rgba(5, 145, 255, 0.2);
+         --uiXeny-shadow-color-dark: rgba(0, 0, 0, 0.17);
+         --uiXeny-shadow-color-light: rgba(0, 0, 0, 0.1);
+         --uiXeny-shadow-color: rgba(0, 0, 0, 0.06);
+
+
+         --uiXeny-shadow-float-color: rgba(0, 0, 0, 0.13);
+         --uiXeny-shadow-float-color-hover: rgba(63, 169, 255, 0.2);
+         --uiXeny-shadow-float-color-active: rgba(46, 83, 246, 0.2);
+         --uiXeny-shadow-float-color-dark: rgba(0, 0, 0, 0.17);
+         --uiXeny-shadow-float-color-dark-hover: rgba(63, 169, 255, 0.24);
+         --uiXeny-shadow-float-color-dark-active: rgba(46, 83, 246, 0.24);
+         --uiXeny-shadow-float-color-light: rgba(0, 0, 0, 0.1);
+         --uiXeny-shadow-float-color-light-hover: rgba(63, 169, 255, 0.2);
+         --uiXeny-shadow-float-color-light-active: rgba(46, 83, 246, 0.2);
+
+         /* Дополнительные цвета для специфических элементов */
+         --uiXeny-checkbox-icon-event-background-color: #0591FF33;
+         --uiXeny-toggle-switch-unchecked-hover-color: darkgrey;
+         --uiXeny-toggle-switch-unchecked-color: #ccc;
+
+         --uiXeny-box-shadow-float: 0 6px 16px 0 var(--uiXeny-shadow-float-color), 0 3px 6px -4px var(--uiXeny-shadow-float-color-dark), 0 9px 28px 8px var(--uiXeny-shadow-float-color-light);
+         --uiXeny-box-shadow-float-active: 0 6px 16px 0 var(--uiXeny-shadow-float-color-active), 0 3px 6px -4px var(--uiXeny-shadow-float-color-dark-active), 0 9px 28px 8px var(--uiXeny-shadow-float-color-light-active);
+         --uiXeny-box-shadow-float-hover: 0 6px 16px 0 var(--uiXeny-box-shadow-float-color-hover), 0 3px 6px -4px var(--uiXeny-shadow-float-color-dark-hover), 0 9px 28px 8px var(--uiXeny-shadow-float-color-light-active);
+
+         /* Границы компонентов */
+         --uiXeny-border-color: #AFC1D0FF; /* Универсальный цвет границ */
+
+         --uiXeny-border-1px: 1px solid var(--uiXeny-border-color);
+         --uiXeny-border-2px-focus: 1px solid var(--uiXeny-border-color);
+         --uiXeny-border-2px: 2px solid var(--uiXeny-border-color);
+
+         --uiXeny-border-radius: 5px;
+
+         /* Тени */
+         --uiXeny-box-shadow-event-around-5px: 0px 0px 0px 5px var(--uiXeny-shadow-color-2p);
+         --uiXeny-box-shadow-event-around-4px: 0px 0px 0px 4px var(--uiXeny-shadow-color-2p);
+         --uiXeny-box-shadow-event-around-2px: 0px 0px 0px 2px var(--uiXeny-shadow-color-2p);
+         --uiXeny-box-shadow-bottom: 0 2px 0 var(--uiXeny-shadow-color-1p);
+         --uiXeny-box-shadow-button: 0 2px 0 var(--uiXeny-shadow-color-1p);
+         --uiXeny-box-shadow: 3px 3px 10px 6px var(--uiXeny-shadow-color);
+
+
+         /* Время анимации переходов */
+         --uiXeny-transition-time: 0.2s;
+     }
 
 /* Светлая тема */
-.light-theme {
-    /* Основные цвета */
-    --uiXeny-primary-color: #0570FF;
-    --uiXeny-secondary-color: #3FA9FF;
-    --uiXeny-text-color: #333;
-    --uiXeny-background-color: #FFF;
+/*.light-theme {*/
+/*    !* Основные цвета *!*/
+/*    --uiXeny-primary-color: #0570FF;*/
+/*    --uiXeny-secondary-color: #3FA9FF;*/
+/*    --uiXeny-text-color: #333;*/
+/*    --uiXeny-background-color: #FFF;*/
 
-    --uiXeny-checkbox-icon-background-color: rgba(5, 145, 255, 0.2);
-    --uiXeny-toggle-switch-unchecked-color: #ccc;
-    --uiXeny-toggle-switch-unchecked-hover-color: darkgrey;
+/*    --uiXeny-checkbox-icon-background-color: rgba(5, 145, 255, 0.2);*/
+/*    --uiXeny-toggle-switch-unchecked-color: #ccc;*/
+/*    --uiXeny-toggle-switch-unchecked-hover-color: darkgrey;*/
 
-    /* Цвета теней */
-    --uiXeny-box-shadow-float-color: rgba(0, 0, 0, 0.13);
-    --uiXeny-box-shadow-float-color-active: rgba(46, 83, 246, 0.2);
-    --uiXeny-box-shadow-float-color-dark: rgba(0, 0, 0, 0.17);
-    --uiXeny-box-shadow-float-color-dark-active: rgba(46, 83, 246, 0.24);
-    --uiXeny-box-shadow-float-color-light: rgba(0, 0, 0, 0.1);
-    --uiXeny-box-shadow-float-color-light-active: rgba(46, 83, 246, 0.2);
+/*    !* Цвета теней *!*/
+/*    --uiXeny-box-shadow-float-color: rgba(0, 0, 0, 0.13);*/
+/*    --uiXeny-box-shadow-float-color-active: rgba(46, 83, 246, 0.2);*/
+/*    --uiXeny-box-shadow-float-color-dark: rgba(0, 0, 0, 0.17);*/
+/*    --uiXeny-box-shadow-float-color-dark-active: rgba(46, 83, 246, 0.24);*/
+/*    --uiXeny-box-shadow-float-color-light: rgba(0, 0, 0, 0.1);*/
+/*    --uiXeny-box-shadow-float-color-light-active: rgba(46, 83, 246, 0.2);*/
 
-    /* Границы компонентов */
-    --uiXeny-border-color: #AFC1D0FF; /* Универсальный цвет границ */
-}
+/*    !* Границы компонентов *!*/
+/*    --uiXeny-border-color: #AFC1D0FF; !* Универсальный цвет границ *!*/
+/*}*/
 
-/* Тёмная тема */
-.dark-theme {
-    /* Основные цвета */
-    --uiXeny-primary-color: #90CAF9;
-    --uiXeny-secondary-color: #64B5F6;
-    --uiXeny-text-color: #EEE;
-    --uiXeny-background-color: #263238;
+/* !*Тёмная тема*!*/
+/*.dark-theme {*/
+/*    !* Основные цвета *!*/
+/*    --uiXeny-primary-color: #90CAF9;*/
+/*    --uiXeny-secondary-color: #64B5F6;*/
+/*    --uiXeny-text-color: #EEE;*/
+/*    --uiXeny-background-color: #263238;*/
 
-    --uiXeny-checkbox-icon-background-color: rgba(5, 145, 255, 0.2);
-    --uiXeny-toggle-switch-unchecked-color: #ccc;
-    --uiXeny-toggle-switch-unchecked-hover-color: darkgrey;
+/*    --uiXeny-checkbox-icon-background-color: rgba(5, 145, 255, 0.2);*/
+/*    --uiXeny-toggle-switch-unchecked-color: #ccc;*/
+/*    --uiXeny-toggle-switch-unchecked-hover-color: darkgrey;*/
 
-    /* Цвета теней */
-    --uiXeny-box-shadow-float-color: rgba(0, 0, 0, 0.3);
-    --uiXeny-box-shadow-float-color-hover: rgba(255, 255, 255, 0.2);
-    --uiXeny-box-shadow-float-color-dark: rgba(0, 0, 0, 0.5);
-    --uiXeny-box-shadow-float-color-dark-active: rgba(255, 255, 255, 0.24);
-    --uiXeny-box-shadow-float-color-light: rgba(0, 0, 0, 0.2);
-    --uiXeny-box-shadow-float-color-light-active: rgba(255, 255, 255, 0.3);
+/*    !* Цвета теней *!*/
+/*    --uiXeny-box-shadow-float-color: rgba(0, 0, 0, 0.3);*/
+/*    --uiXeny-box-shadow-float-color-hover: rgba(255, 255, 255, 0.2);*/
+/*    --uiXeny-box-shadow-float-color-dark: rgba(0, 0, 0, 0.5);*/
+/*    --uiXeny-box-shadow-float-color-dark-active: rgba(255, 255, 255, 0.24);*/
+/*    --uiXeny-box-shadow-float-color-light: rgba(0, 0, 0, 0.2);*/
+/*    --uiXeny-box-shadow-float-color-light-active: rgba(255, 255, 255, 0.3);*/
 
-    /* Границы компонентов */
-    --uiXeny-border-color: #546E7A; /* Универсальный цвет границ */
-}
+/*    !* Границы компонентов *!*/
+/*    --uiXeny-border-color: #546E7A; !* Универсальный цвет границ *!*/
+/*}*/

@@ -11,11 +11,18 @@ import {ThemeProvider} from "./contexts/ThemeContext";
 import Card from "./components/Card/Card";
 import Select from "./components/Select/Select";
 import Modal from "./components/Modal/Modal";
+import {useTheme} from "./hooks/useTheme";
 import DatePicker from "./components/DatePicker/DatePicker";
 
 
 function App() {
-    const [isChecked, setChecked] = useState(false)
+    const [isChecked, setChecked] = useState(false);
+    const {currentTheme, changeTheme} = useTheme();
+    console.log(currentTheme);
+    const onClickTheme = () => {
+        changeTheme(currentTheme.name === 'dark' ? 'default': 'dark')
+    }
+
     const onChangeCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
         setChecked(e.target.checked);
     }
@@ -167,7 +174,7 @@ function App() {
                             <Button buttonType="primary" onClick={() => setIsOpenModal(!isOpenModal)}>Open Modal window
                                 here</Button>
                             <Modal open={isOpenModal} title={"Модальное окно"} footerActions={[<Button onClick={() => setIsOpenModal(false)} key={1}>Cancel</Button>,
-                                <Button buttonType="primary" key={1}>Ok</Button>]}
+                                <Button buttonType="primary" key={2}>Ok</Button>]}
                                    onClose={() => setIsOpenModal(false)}>
                                 <h2>Заголовок Модального Окна</h2>
                                 <p>Добро пожаловать в модальное окно! Здесь вы можете разместить любое содержимое, которое хотите отобразить пользователям. Ниже приведены некоторые примеры текста:</p>
@@ -234,7 +241,7 @@ function App() {
 
                             <TextArea rows={15} cols={5} maxLength={100} placeholder="TextArea"></TextArea>
 
-                            <Button.Float buttonType={"primary"}>
+                            <Button.Float buttonType={"primary"} onClick={onClickTheme}>
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                      aria-hidden="true" role="img" className="iconify iconify--logos" width="35.93"
                                      height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 228">
