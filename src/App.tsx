@@ -4,7 +4,6 @@ import {CheckBox} from "./components/CheckBox/CheckBox";
 import React, {useState} from "react";
 import {ToggleSwitch} from "./components/ToggleSwitch/ToggleSwitch";
 import Icon from "./components/Icon/Icon";
-
 import './style.css'
 import {TextArea} from "./components/TextArea/TextArea";
 import {ThemeProvider} from "./contexts/ThemeContext";

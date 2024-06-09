@@ -108,6 +108,7 @@
     padding: 10px 20px;
     cursor: pointer;
     transition: var(--uiXeny-transition-time);
+    color: var(--uiXeny-text-color);
 }
 
 .uiXeny-select .uiXeny-select__content .uiXeny-select__item--selected,

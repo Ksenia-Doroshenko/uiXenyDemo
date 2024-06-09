@@ -3,7 +3,8 @@
 import React, {useEffect, useRef, useState} from "react";
 import "./Select.css";
 import Icon from "../Icon/Icon";
-import {generateUUID} from "../../utils/generateUUID.ts";
+import {generateUUID} from "../../utils/generateUUID";
+import {TSize} from "../../types/GeneralTypes";
 
 type TSelectProps = (SingleSelectProps | MultipleSelectProps) & {
     children?: React.ReactElement | string;

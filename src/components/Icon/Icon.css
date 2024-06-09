@@ -21,10 +21,10 @@
 }
 
 .uiXeny-icon svg path {
-    stroke: var(--svg-color, black);
+    stroke: var(--uiXeny-svg-color, black);
     transition: var(--uiXeny-transition-time);
 }
 
 .uiXeny-icon svg:hover path {
-    stroke: var(--svg-hover-color, var(--svg-color, black));
+    stroke: var(--uiXeny-svg-hover-color, var(--uiXeny-svg-color, black));
 }
