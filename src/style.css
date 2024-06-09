@@ -1,8 +1,14 @@
+body{
+    background-color: var(--uiXeny-background-color-body);
+    color: var(--uiXeny-text-color);
+}
+
 :root {
          /* Основные цвета */
          --uiXeny-primary-color: #0570FF;
          --uiXeny-secondary-color: #3FA9FF;
          --uiXeny-main-color: #1677ff;
+        --uiXeny-background-color-body: white;
          --uiXeny-disabled-color: lightgrey;
          --uiXeny-text-color: #333;
          --uiXeny-text-subdued-color: #00000073;

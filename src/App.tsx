@@ -11,16 +11,15 @@ import {ThemeProvider} from "./contexts/ThemeContext";
 import Card from "./components/Card/Card";
 import Select from "./components/Select/Select";
 import Modal from "./components/Modal/Modal";
-import {useTheme} from "./components/ThemeProvider/ThemeProvider.tsx";
+import {useTheme} from "./hooks/useTheme.ts";
 
 
 function App() {
     const [isChecked, setChecked] = useState(false);
-    const {themeName, setThemeName} = useTheme();
-    console.log(themeName);
-
+    const {currentTheme, changeTheme} = useTheme();
+    console.log(currentTheme);
     const onClickTheme = () => {
-        setThemeName(themeName === 'dark' ? 'default': 'dark')
+        changeTheme(currentTheme.name === 'dark' ? 'default': 'dark')
     }
 
     const onChangeCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -173,7 +172,7 @@ function App() {
                             <Button buttonType="primary" onClick={() => setIsOpenModal(!isOpenModal)}>Open Modal window
                                 here</Button>
                             <Modal open={isOpenModal} title={"Модальное окно"} footerActions={[<Button onClick={() => setIsOpenModal(false)} key={1}>Cancel</Button>,
-                                <Button buttonType="primary" key={1}>Ok</Button>]}
+                                <Button buttonType="primary" key={2}>Ok</Button>]}
                                    onClose={() => setIsOpenModal(false)}>
                                 <h2>Заголовок Модального Окна</h2>
                                 <p>Добро пожаловать в модальное окно! Здесь вы можете разместить любое содержимое, которое хотите отобразить пользователям. Ниже приведены некоторые примеры текста:</p>

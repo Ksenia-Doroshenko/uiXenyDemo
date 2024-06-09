@@ -10,6 +10,7 @@ export type TTheme = {
     textSubduedColor?: string;
     backgroundColorWhite?: string;
     backgroundColorGrey?: string;
+    backgroundColorBody?: string;
     dangerColor?: string;
     warningColor?: string;
     successColor?: string;

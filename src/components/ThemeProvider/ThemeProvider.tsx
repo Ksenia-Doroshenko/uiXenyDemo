@@ -1,39 +1,59 @@
-import {createContext, ReactNode, useContext, useEffect, useState} from 'react';
+import {createContext, ReactNode, useEffect, useState} from 'react';
 import {TTheme} from "../../types/GeneralTypes";
+import {darkTheme} from "./dark.theme.ts";
+import {defaultTheme} from "./default.theme.ts";
 
 interface ThemeContextType {
-    themeName: string;
-    setThemeName: (theme: string) => void;
+    currentTheme: TTheme;
+    changeTheme: (theme: string) => void;
 }
 
 const defaultThemeContext: ThemeContextType = {
-    themeName: 'default',
-    setThemeName: () => {},
+    currentTheme: defaultTheme,
+    changeTheme: () => {
+    },
 };
 
 export const ThemeContext = createContext<ThemeContextType>(defaultThemeContext);
 
-export function ThemeProvider({ children, theme }: { children: ReactNode, theme: TTheme }) {
-    const [themeName, setThemeName] = useState(theme.name);
+export function ThemeProvider({children, initialTheme = defaultTheme, registeredThemes = []}: {
+    children: ReactNode,
+    initialTheme?: TTheme,
+    registeredThemes?: TTheme[]
+}) {
+    registeredThemes.push(darkTheme);
+    registeredThemes.push(defaultTheme);
+    const [currentTheme, setCurrentTheme] = useState(initialTheme);
+
+    const changeTheme = (themeName: string) => {
+        registeredThemes.forEach(theme => {
+            console.log(theme.name)
+            console.log(themeName)
+            if (theme.name === themeName) {
+                setCurrentTheme(theme);
+            }
+        });
+    }
 
     useEffect(() => {
-        localStorage.setItem('uiXeny-theme-name', themeName);
-    }, [themeName]);
+        const savedTheme = localStorage.getItem('uiXeny-theme-name');
+        if (savedTheme){
+            setCurrentTheme(registeredThemes.find(theme => theme.name === savedTheme) || defaultTheme);
+        }
+    }, []);
 
     useEffect(() => {
         function updateThemeVariables(theme: TTheme) {
             const root = document.documentElement;
-
             for (const [key, value] of Object.entries(theme)) {
-                console.log(`${convertToCssVariable(key)}: ${value}`);
-                    root.style.setProperty(convertToCssVariable(key), value);
-
+                root.style.setProperty(convertToCssVariable(key), value);
             }
         }
 
+        localStorage.setItem('uiXeny-theme-name', currentTheme.name);
 
-        updateThemeVariables(theme);
-    }, [theme]);
+        updateThemeVariables(currentTheme);
+    }, [currentTheme]);
 
     function convertToCssVariable(str: string) {
         return '--uiXeny-' + str
@@ -42,11 +62,8 @@ export function ThemeProvider({ children, theme }: { children: ReactNode, theme:
     }
 
     return (
-        <ThemeContext.Provider value={{ themeName, setThemeName }}>
+        <ThemeContext.Provider value={{currentTheme, changeTheme}}>
             {children}
         </ThemeContext.Provider>
     );
 }
-
-// Пример использования хука для использования контекста темы
-export const useTheme = () => useContext(ThemeContext);
