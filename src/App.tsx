@@ -17,7 +17,6 @@ import DatePicker from "./components/DatePicker/DatePicker";
 function App() {
     const [isChecked, setChecked] = useState(false);
     const {currentTheme, changeTheme} = useTheme();
-    console.log(currentTheme);
     const onClickTheme = () => {
         changeTheme(currentTheme.name === 'dark' ? 'default': 'dark')
     }
@@ -27,6 +26,7 @@ function App() {
     }
 
     function onChangeSelect(value: string | number) {
+        console.log('app');
         console.log(value);
     }
 
@@ -170,6 +170,26 @@ function App() {
                                         {value: 'disabled', label: 'Disabled', disabled: true},
                                     ]}></Select>
 
+                            <Select placeholder="Select uiXeny" onChange={onChangeSelect}
+                                    onFocus={onFocusSelect}
+                                    onBlur={onBlurSelect}
+                                    options={[
+                                        {value: 'jack', label: 'Jack'},
+                                        {value: 'lucy', label: 'Lucy'},
+                                        {value: 'yiminghe', label: 'Yiminghe'},
+                                        {value: 'alex', label: 'Alex'},
+                                        {value: 'sophia', label: 'Sophia'},
+                                        {value: 'liam', label: 'Liam'},
+                                        {value: 'olivia', label: 'Olivia'},
+                                        {value: 'william', label: 'William'},
+                                        {value: 'emma', label: 'Emma'},
+                                        {value: 'noah', label: 'Noah'},
+                                        {value: 'ava', label: 'Ava'},
+                                        {value: 'jacob', label: 'Jacob'},
+                                        {value: 'mia', label: 'Mia'},
+                                        {value: 'disabled', label: 'Disabled', disabled: true},
+                                    ]}></Select>
+
                             <Button buttonType="primary" onClick={() => setIsOpenModal(!isOpenModal)}>Open Modal window
                                 here</Button>
                             <Modal open={isOpenModal} title={"Модальное окно"} footerActions={[<Button onClick={() => setIsOpenModal(false)} key={1}>Cancel</Button>,
@@ -240,7 +260,7 @@ function App() {
 
                             <TextArea rows={15} cols={5} maxLength={100} placeholder="TextArea"></TextArea>
 
-                            <Button.Float buttonType={"primary"} onClick={onClickTheme}>
+                            <Button.Float buttonType={"primary"} onClick={onClickTheme} style={{position: 'fixed', right: '20px', bottom: '20px'}}>
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                      aria-hidden="true" role="img" className="iconify iconify--logos" width="35.93"
                                      height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 228">
