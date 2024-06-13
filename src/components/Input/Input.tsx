@@ -180,7 +180,9 @@ const Tel: React.FC<TInputProps<TInputTypes>> = ({
         }
     };
 
-    const onPhoneInput = function (e: any) {
+    const onPhoneInput = function (e:  React.FormEvent<HTMLInputElement>) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         let input = e.target,
             inputNumbersValue = getInputNumbersValue(input),
             selectionStart = input.selectionStart,
