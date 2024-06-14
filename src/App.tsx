@@ -12,6 +12,7 @@ import Select from "./components/Select/Select";
 import Modal from "./components/Modal/Modal";
 import {useTheme} from "./hooks/useTheme";
 import DatePicker from "./components/DatePicker/DatePicker";
+import Accordion from "./components/Accordion/Accordion";
 
 
 function App() {
@@ -37,6 +38,24 @@ function App() {
     function onBlurSelect() {
         console.log("blurred select");
     }
+
+    const accordionData = [
+        {
+            heading: "Header 1",
+            content:
+                "Non odit magnam dolorum. Et odio et maxime consequuntur provident. Error eaque est dolor et qui. Ex odit doloremque consequatur quis. Eaque et pariatur dolores. Magni in quasi dolor repudiandae explicabo.",
+        },
+        {
+            heading: "Header 2",
+            content:
+                "Quos quam ipsam consequatur consequatur et distinctio. Facere vel ut dolorem. Quam quo neque quos voluptates cupiditate sit quae.",
+        },
+        {
+            heading: "Header 3",
+            content:
+                "Vel et quam reprehenderit velit. Possimus accusamus eos esse vero quo modi voluptas hic. Quia illo quisquam vel quis qui. Autem labore aut incidunt. Eius non voluptatem et laboriosam in.",
+        },
+    ];
 
     const [isOpenModal, setIsOpenModal] = useState(false);
 
@@ -189,6 +208,10 @@ function App() {
                                         {value: 'mia', label: 'Mia'},
                                         {value: 'disabled', label: 'Disabled', disabled: true},
                                     ]}></Select>
+
+
+                                    <Accordion accordionData={accordionData} />
+
 
                             <Button buttonType="primary" onClick={() => setIsOpenModal(!isOpenModal)}>Open Modal window
                                 here</Button>
