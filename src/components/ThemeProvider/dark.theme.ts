@@ -10,7 +10,7 @@ export const darkTheme: TTheme = {
     textSubduedColor: "rgba(230,230,230,0.45)",
     backgroundColorWhite: "rgb(21,29,57)",
     backgroundColorBody: "rgba(1,7,29)",
-    backgroundColorGrey: "rgb(120,120,120)",
+    backgroundColorGrey: "rgb(12,18,24)",
     dangerColor: "rgba(255, 0, 30)",
     warningColor: "rgba(255, 179, 0)",
     successColor: "rgba(36, 173, 20)",
