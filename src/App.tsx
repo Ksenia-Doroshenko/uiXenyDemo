@@ -13,11 +13,19 @@ import Modal from "./components/Modal/Modal";
 import {useTheme} from "./hooks/useTheme";
 import DatePicker from "./components/DatePicker/DatePicker";
 import Accordion from "./components/Accordion/Accordion";
+import {useNotify} from "./components/notification/NotificationsHolder";
 
 
 function App() {
     const [isChecked, setChecked] = useState(false);
     const {currentTheme, changeTheme} = useTheme();
+    const [api, context] = useNotify();
+
+    const onOpenNotify = () => {
+        console.log('donne')
+        api({ type: 'msg', message: `donne ${currentTheme}` });
+    }
+
     const onClickTheme = () => {
         changeTheme(currentTheme.name === 'dark' ? 'default': 'dark')
     }
@@ -62,7 +70,7 @@ function App() {
     return (
         <>
             <ThemeProvider>
-
+                {context}
                 <div className={'light-theme'}
 
                      style={{display: "grid", justifyItems: "center", padding: "20px", fontFamily: "sans-serif"}}>
@@ -293,6 +301,8 @@ function App() {
                             </Button.Float>
 
                             <Icon.TextFileOutlined/>
+
+                            <Button.Float onClick={onOpenNotify} style={{position: 'fixed', right: '25px', bottom: '80px'}}><Icon.TextFileOutlined/></Button.Float>
 
                             <DatePicker onChange={date => {
                                 console.log(date)
