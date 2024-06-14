@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import { generateUUID } from '../../../../../../../Downloads/notify/src/utils/helpers/others/uuid';
 import './index.css'
 import Notification from './Notification'
@@ -14,6 +14,7 @@ type TAction = {
 };
 
 export const useNotify = (): [(notify: TNotify) => void, JSX.Element] => {
+  const [isRemoveState, setRemoveState] = useState(false);
   function reducer(state: TNotify[], action: TAction) {
     switch (action.type) {
       case 'add': {
@@ -34,15 +35,19 @@ export const useNotify = (): [(notify: TNotify) => void, JSX.Element] => {
   const [notifys, dispatch] = React.useReducer(reducer, []);
 
   const addNewNotify = (notify: TNotify) => {
+    setRemoveState(prev => false)
+
     dispatch({ type: 'add', payload: notify });
   };
 
   const removeLastNotify = () => {
+    setRemoveState(prev => true)
+
     dispatch({ type: 'remove' });
   };
 
   useEffect(() => {
-    const beautifulSeconds = (2.5 / (0.5 * notifys.length + 1)) * 1000;
+    const beautifulSeconds = (4 / (0.5 * notifys.length + 1)) * 1000;
     const id = setTimeout(removeLastNotify, beautifulSeconds);
 
     return () => {
@@ -50,10 +55,13 @@ export const useNotify = (): [(notify: TNotify) => void, JSX.Element] => {
     };
   }, [notifys.length]);
 
+  console.log(notifys)
+  console.log(isRemoveState)
+
   const notificationsHolder = (
     <div className='notofication_holder'>
-      {notifys.map((el) => (
-        <Notification open key={generateUUID()} close={false} message={el.message}/>
+      {notifys.map((el, index) => (
+        <Notification last={index === notifys.length - 1} open key={generateUUID()} close={(index === notifys.length - 1) && isRemoveState} message={el.message} onClickRemove={removeLastNotify}/>
       ))}
     </div>
   );

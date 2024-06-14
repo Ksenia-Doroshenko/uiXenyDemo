@@ -14,23 +14,33 @@
 
 .notification_wrapper{
     right: 0;
-    background-color: red;
-    color: white;
+    background-color: var(--uiXeny-background-color-white);
+    color: var(--uiXeny-text-color);
+    border: var(--uiXeny-border-1px);
+    border-radius: var(--uiXeny-border-radius);
     padding: 10px;
     transition: 0.2s;
     width: fit-content;
     min-width: 200px;
+    position: relative;
+    /*opacity: 0;*/
+    /*transform: translateX(120%);*/
+}
+
+.notification_wrapper__close{
+    position: absolute;
+    top: 0;
+    right: 5px;
     cursor: pointer;
-    opacity: 0;
-    transform: translateX(120%);
 }
 
 
-.notification_wrapper__show--rt:last-child {
+
+.notification_wrapper__show--rt {
     animation: show_notify_rt 0.2s ease-in forwards;
 }
 
-.notification_wrapper__hide--rt:last-child {
+.notification_wrapper__hide--rt {
     animation: hide_notify_rt 0.2s ease-out forwards;
 }
 
@@ -38,18 +48,18 @@
 @keyframes show_notify_rt {
     from{
         opacity: 0;
-        transform: translateX(120%);
+        transform: translateX(100%);
     }
     to{
         opacity: 1;
-        transform: translateX(-20%);
+        transform: translateX(0%);
     }
 }
 
 @keyframes hide_notify_rt {
     from{
         opacity: 1;
-        transform: translateX(-20%);
+        transform: translateX(0%);
     }
     to{
         opacity: 0;
