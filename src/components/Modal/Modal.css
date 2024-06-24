@@ -19,7 +19,7 @@
     min-width: 300px;
     width: 50%;
     /*min-height: 300px;*/
-    background-color: var(--uiXeny-background-color);
+    background-color: var(--uiXeny-background-color-white);
     box-shadow: var(--uiXeny-box-shadow-float);
     border-radius: 5px;
     position: fixed;

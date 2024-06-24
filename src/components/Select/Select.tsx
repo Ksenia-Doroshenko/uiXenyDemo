@@ -3,7 +3,8 @@
 import React, {useEffect, useRef, useState} from "react";
 import "./Select.css";
 import Icon from "../Icon/Icon";
-import {generateUUID} from "../../utils/generateUUID.ts";
+import {generateUUID} from "../../utils/generateUUID";
+import {TSize} from "../../types/GeneralTypes";
 
 type TSelectProps = (SingleSelectProps | MultipleSelectProps) & {
     children?: React.ReactElement | string;
@@ -12,7 +13,7 @@ type TSelectProps = (SingleSelectProps | MultipleSelectProps) & {
     options: TOptionType[];
     placeholder?: string;
     style?: React.CSSProperties;
-    onChange?: (event: string | number) => void;
+    onChange?: (event: (string | number)[] | (string | number)) => void;
     onFocus?: () => void;
     onBlur?: () => void;
     multipleSelect?: boolean;
@@ -130,6 +131,7 @@ export const Select: React.FC<TSelectProps> = ({
     }, [highlightedIndex]);
 
     const handleSelectOption = (option: TOptionType) => {
+        const newSelectedOptions = [];
         if (!option.disabled) {
             if (props.multipleSelect) {
                 setSelectedOptions(prevState => {
@@ -146,7 +148,10 @@ export const Select: React.FC<TSelectProps> = ({
                         ? prevState.filter(val => val.value !== option.value)
                         : [...prevState, option];
 
+                    // console.log(newSelectedOptions);
+
                     updateWarning(newSelectedOptions);
+                    onChange?.([...newSelectedOptions?.map(item => item.value)] || []);
                     return newSelectedOptions;
                 });
             } else {
@@ -157,8 +162,14 @@ export const Select: React.FC<TSelectProps> = ({
                 }
                 setIsActive(false);
                 updateWarning([option]);
+                onChange?.(option.value);
+
             }
-            onChange?.(option.value);
+            // if (props.multipleSelect){
+            //     console.log(selectedOptions);
+            //
+            // }else {
+            // }
         }
     };
 
@@ -195,7 +206,6 @@ export const Select: React.FC<TSelectProps> = ({
             const newSelectedOptions = prevOptions.filter(opt => opt.value !== option.value);
             updateWarning(newSelectedOptions);
 
-            // Если удаляемая опция была выбранной, сбросить selected на null
             if (contains(prevOptions, selected)) {
                 setSelected(null);
             }

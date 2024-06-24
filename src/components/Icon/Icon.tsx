@@ -28,13 +28,13 @@ const TextFileOutlinedSVG: React.FC<{ color: string | undefined, hoverColor: str
                                                                                                       }) => {
     // Определяем CSS переменные
     const svgCustomProperties = {
-        '--svg-color': color, // Используем значение color или значение по умолчанию
-        '--svg-hover-color': hoverColor  // Используем значение hoverColor или значение по умолчанию
+        '--uiXeny-svg-color': color, // Используем значение color или значение по умолчанию
+        '--uiXeny-svg-hover-color': hoverColor  // Используем значение hoverColor или значение по умолчанию
     };
 
     // Определяем остальные стили
     const svgStyle: React.CSSProperties = {
-        stroke: 'var(--svg-color)' || 'var(--svg-hover-color, var(--svg-color, black))'// Используем CSS переменную для цвета обводки
+        stroke: 'var(--uiXeny-svg-color)' || 'var--uiXeny-svg-hover-color, var(--uiXeny-svg-color, black))'// Используем CSS переменную для цвета обводки
     };
 
     // Объединяем стили и CSS переменные
@@ -115,13 +115,13 @@ const DownOutlinedSVG: React.FC<{ color: string | undefined, hoverColor: string 
                                                                                                   }) => {
     // Определяем CSS переменные
     const svgCustomProperties = {
-        '--svg-color': color, // Используем значение color или значение по умолчанию
-        '--svg-hover-color': hoverColor  // Используем значение hoverColor или значение по умолчанию
+        '--uiXeny-svg-color': color, // Используем значение color или значение по умолчанию
+        '--uiXeny-svg-hover-color': hoverColor  // Используем значение hoverColor или значение по умолчанию
     };
 
     // Определяем остальные стили
     const svgStyle: React.CSSProperties = {
-        stroke: 'var(--svg-color)' || 'var(--svg-hover-color, var(--svg-color, black))'// Используем CSS переменную для цвета обводки
+        stroke: 'var(--uiXeny-svg-color)' || 'var(--uiXeny-svg-hover-color, var(--uiXeny-svg-color, black))'// Используем CSS переменную для цвета обводки
     };
 
     // Объединяем стили и CSS переменные
@@ -173,13 +173,13 @@ const UpOutlinedSVG: React.FC<{ color: string | undefined, hoverColor: string | 
                                                                                                 }) => {
     // Определяем CSS переменные
     const svgCustomProperties = {
-        '--svg-color': color, // Используем значение color или значение по умолчанию
-        '--svg-hover-color': hoverColor  // Используем значение hoverColor или значение по умолчанию
+        '--uiXeny-svg-color': color, // Используем значение color или значение по умолчанию
+        '--uiXeny-svg-hover-color': hoverColor  // Используем значение hoverColor или значение по умолчанию
     };
 
     // Определяем остальные стили
     const svgStyle: React.CSSProperties = {
-        stroke: 'var(--svg-color)' || 'var(--svg-hover-color, var(--svg-color, black))'// Используем CSS переменную для цвета обводки
+        stroke: 'var(--uiXeny-svg-color)' || 'var(--uiXeny-svg-hover-color, var(--uiXeny-svg-color, black))'// Используем CSS переменную для цвета обводки
     };
 
     // Объединяем стили и CSS переменные
@@ -227,13 +227,13 @@ const CloseOutlinedSVG: React.FC<{ color: string | undefined, hoverColor: string
                                                                                                    }) => {
     // Определяем CSS переменные
     const svgCustomProperties = {
-        '--svg-color': color, // Используем значение color или значение по умолчанию
-        '--svg-hover-color': hoverColor  // Используем значение hoverColor или значение по умолчанию
+        '--uiXeny-svg-color': color, // Используем значение color или значение по умолчанию
+        '--uiXeny-svg-hover-color': hoverColor  // Используем значение hoverColor или значение по умолчанию
     };
 
     // Определяем остальные стили
     const svgStyle: React.CSSProperties = {
-        stroke: 'var(--svg-color)' || 'var(--svg-hover-color, var(--svg-color, black))'// Используем CSS переменную для цвета обводки
+        stroke: 'var(--uiXeny-svg-color)' || 'var(--uiXeny-svg-hover-color, var(--uiXeny-svg-color, black))'// Используем CSS переменную для цвета обводки
     };
 
     // Объединяем стили и CSS переменные
@@ -289,13 +289,13 @@ const LeftIconSVG: React.FC<{ color: string | undefined, hoverColor: string | un
                                                                                                 }) => {
     // Определяем CSS переменные
     const svgCustomProperties = {
-        '--svg-color': color, // Используем значение color или значение по умолчанию
-        '--svg-hover-color': hoverColor  // Используем значение hoverColor или значение по умолчанию
+        '--uiXeny-svg-color': color, // Используем значение color или значение по умолчанию
+        '--uiXeny-svg-hover-color': hoverColor  // Используем значение hoverColor или значение по умолчанию
     };
 
     // Определяем остальные стили
     const svgStyle: React.CSSProperties = {
-        stroke: 'var(--svg-color)' || 'var(--svg-hover-color, var(--svg-color, black))'// Используем CSS переменную для цвета обводки
+        stroke: 'var(--uiXeny-svg-color)' || 'var(--uiXeny-svg-hover-color, var(--uiXeny-svg-color, black))'// Используем CSS переменную для цвета обводки
     };
 
     // Объединяем стили и CSS переменные
@@ -352,13 +352,13 @@ const RightArrowSVG: React.FC<{ color: string | undefined, hoverColor: string | 
                                                                                               }) => {
     // Определяем CSS переменные
     const svgCustomProperties = {
-        '--svg-color': color, // Используем значение color или значение по умолчанию
-        '--svg-hover-color': hoverColor  // Используем значение hoverColor или значение по умолчанию
+        '--uiXeny-svg-color': color, // Используем значение color или значение по умолчанию
+        '--uiXeny-svg-hover-color': hoverColor  // Используем значение hoverColor или значение по умолчанию
     };
 
     // Определяем остальные стили
     const svgStyle: React.CSSProperties = {
-        stroke: 'var(--svg-color)' || 'var(--svg-hover-color, var(--svg-color, black))'// Используем CSS переменную для цвета обводки
+        stroke: 'var(--uiXeny-svg-color)' || 'var(--uiXeny-svg-hover-color, var(--uiXeny-svg-color, black))'// Используем CSS переменную для цвета обводки
     };
 
     // Объединяем стили и CSS переменные

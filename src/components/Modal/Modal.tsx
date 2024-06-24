@@ -8,6 +8,7 @@ type TModalProps = {
     footerActions?: ReactNode[];
     children?: ReactNode;
     title?: ReactNode;
+    className?: string;
 };
 
 // eslint-disable-next-line react/function-component-definition
@@ -19,7 +20,7 @@ const Modal: React.FC<TModalProps> = ({
                                           ...props
                                       }) => {
     // console.log(open);
-
+    const classNameArr = ["uiXeny-modal"];
     const onClickModalWrapper = () => {
         onClose?.();
     };
@@ -40,12 +41,14 @@ const Modal: React.FC<TModalProps> = ({
         ? 'uiXeny-modal_wrapper__body--close'
         : 'uiXeny-modal_wrapper__body--open';
 
+    props.className && classNameArr.push(props.className);
+
     return (
         <>
             {open ? (
                 <div className='uiXeny-modal_wrapper' onClick={onClickModalWrapper}/>
             ) : null}
-            <div className={`uiXeny-modal_wrapper__body ${isModalOpen}` + (isInit ? " uiXeny-modal_wrapper__body--init" : "")}>
+            <div className={classNameArr.join(' ') + ` uiXeny-modal_wrapper__body ${isModalOpen}` + (isInit ? " uiXeny-modal_wrapper__body--init" : "")}>
                 <div className='uiXeny-modal_wrapper__body__header'>
                     <div className='uiXeny-modal_wrapper__body__header__title'>{props.title}</div>
                     <Icon.CloseOutlined sizeType="small" className={"uiXeny-modal__close_icon"} onClick={onClose}/>

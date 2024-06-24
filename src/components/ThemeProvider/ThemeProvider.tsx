@@ -1,7 +1,7 @@
-import {createContext, ReactNode, useEffect, useState} from 'react';
+import React from 'react';
 import {TTheme} from "../../types/GeneralTypes";
-import {darkTheme} from "./dark.theme.ts";
-import {defaultTheme} from "./default.theme.ts";
+import {darkTheme} from "./dark.theme";
+import {defaultTheme} from "./default.theme";
 
 interface ThemeContextType {
     currentTheme: TTheme;
@@ -14,16 +14,16 @@ const defaultThemeContext: ThemeContextType = {
     },
 };
 
-export const ThemeContext = createContext<ThemeContextType>(defaultThemeContext);
+export const ThemeContext = React.createContext<ThemeContextType>(defaultThemeContext);
 
 export function ThemeProvider({children, initialTheme = defaultTheme, registeredThemes = []}: {
-    children: ReactNode,
+    children: React.ReactNode,
     initialTheme?: TTheme,
     registeredThemes?: TTheme[]
 }) {
     registeredThemes.push(darkTheme);
     registeredThemes.push(defaultTheme);
-    const [currentTheme, setCurrentTheme] = useState(initialTheme);
+    const [currentTheme, setCurrentTheme] = React.useState(initialTheme);
 
     const changeTheme = (themeName: string) => {
         registeredThemes.forEach(theme => {
@@ -33,14 +33,14 @@ export function ThemeProvider({children, initialTheme = defaultTheme, registered
         });
     }
 
-    useEffect(() => {
+    React.useEffect(() => {
         const savedTheme = localStorage.getItem('uiXeny-theme-name');
         if (savedTheme){
             setCurrentTheme(registeredThemes.find(theme => theme.name === savedTheme) || defaultTheme);
         }
     }, []);
 
-    useEffect(() => {
+    React.useEffect(() => {
         function updateThemeVariables(theme: TTheme) {
             const root = document.documentElement;
             for (const [key, value] of Object.entries(theme)) {

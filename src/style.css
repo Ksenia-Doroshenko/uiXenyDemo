@@ -17,7 +17,7 @@ body{
          --uiXeny-danger-color : rgba(255, 0, 30, 0.76);
          --uiXeny-warning-color : rgba(255, 179, 0, 0.76);
          --uiXeny-success-color : rgba(36, 173, 20, 0.76);
-         --svg-color: grey;
+         --uiXeny-svg-color: grey;
 
          /* Цвета для различных состояний и эффектов */
          --uiXeny-hover-color: #3FA9FFFF;
@@ -25,7 +25,7 @@ body{
          --uiXeny-active-checked-color: #1677ff;
          --uiXeny-active-color: #2E53F6FF;
          --uiXeny-selected-color: rgba(63, 169, 255, 0.3);
-         --svg-hover-color: #333;
+         --uiXeny-svg-hover-color: #333;
 
          /* Цвета для теней */
          --uiXeny-shadow-color-1p: rgba(5, 145, 255, 0.1);
