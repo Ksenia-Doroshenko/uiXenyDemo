@@ -23,7 +23,7 @@ function App() {
 
     const onOpenNotify = () => {
         console.log('donne')
-        api({ type: 'msg', message: `donne ${currentTheme}` });
+        api({ type: 'msg', message: `New notification` });
     }
 
     const onClickTheme = () => {
@@ -70,10 +70,10 @@ function App() {
     return (
         <>
             <ThemeProvider>
-                {context}
                 <div className={'light-theme'}
 
                      style={{display: "grid", justifyItems: "center", padding: "20px", fontFamily: "sans-serif"}}>
+                    {context}
 
                     <p style={{
                         textAlign: "center",
@@ -263,7 +263,7 @@ function App() {
                                   style={{width: 300}}
                                   extra={<a href="#">More</a>}
                                   avatar={<img
-                                      src={"https://sun9-13.userapi.com/impg/Whb89mqBKvrFOcEJSv1tSxf0a0PslcdOjtvbxg/6icsRB-byDg.jpg?size=2560x1707&quality=96&sign=a316b7b0d237a94ccf407de1a118040f&type=album"}
+                                      src={"https://upload.wikimedia.org/wikipedia/commons/0/0f/Eiffel_Tower_Vertical.JPG"}
                                       alt={"s"}/>}>
                                 <p style={{fontWeight: "bold"}}>title</p>
                                 <p>demo text</p>
@@ -273,7 +273,7 @@ function App() {
                                   actions={[<Icon.TextFileOutlined key={1}/>, <Icon.TextFileOutlined key={2}/>,
                                       <Icon.TextFileOutlined key={3}/>]} extra={<a href="#">More</a>}
                                   avatar={<img alt="example"
-                                               src={"https://sun9-13.userapi.com/impg/Whb89mqBKvrFOcEJSv1tSxf0a0PslcdOjtvbxg/6icsRB-byDg.jpg?size=2560x1707&quality=96&sign=a316b7b0d237a94ccf407de1a118040f&type=album"}/>}></Card>
+                                               src={"https://upload.wikimedia.org/wikipedia/commons/0/0f/Eiffel_Tower_Vertical.JPG"}/>}></Card>
                             <Card style={{width: 300}}
                                   actions={[<Icon.TextFileOutlined key={1}/>, <Icon.TextFileOutlined key={2}/>,
                                       <Icon.TextFileOutlined key={3}/>]} extra={<a href="#">More</a>}

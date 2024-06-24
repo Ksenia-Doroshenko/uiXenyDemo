@@ -98,6 +98,7 @@
     border-radius: var(--uiXeny-border-radius);
     overflow: auto;
     max-height: 250px;
+    z-index: 1;
 }
 
 .uiXeny-select__item--highlighted {
