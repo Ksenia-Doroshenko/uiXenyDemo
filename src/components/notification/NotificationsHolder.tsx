@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import { generateUUID } from '../../../../../../../Downloads/notify/src/utils/helpers/others/uuid';
 import './index.css'
 import Notification from './Notification'
+import {generateUUID} from "../../utils/generateUUID";
 
 type TNotify = {
   type: string;
