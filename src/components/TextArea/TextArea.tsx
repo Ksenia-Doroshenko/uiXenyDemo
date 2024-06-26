@@ -1,9 +1,8 @@
 import "./TextArea.css";
-import {ChangeEvent, DetailedHTMLProps, TextareaHTMLAttributes, useRef, useState} from "react";
+import React, {ChangeEvent, DetailedHTMLProps, TextareaHTMLAttributes, useRef, useState} from "react";
 
 type TTextAreaProps = DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> & {
     className?: string;
-
 }
 
 export const TextArea = ({children, ...props}: TTextAreaProps) => {
@@ -22,7 +21,7 @@ export const TextArea = ({children, ...props}: TTextAreaProps) => {
         <div className="uiXeny-textArea__container__counter">
             <span> {textAreaLen}/{props.maxLength}</span>
         </div>
-)
+    )
 
     return (
         <>

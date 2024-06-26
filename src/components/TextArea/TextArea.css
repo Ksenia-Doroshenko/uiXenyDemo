@@ -1,6 +1,9 @@
 .uiXeny-textArea {
     transition: background-color var(--uiXeny-transition-time);
     resize: vertical;
+    padding: 16px;
+    min-height: 52px;
+    display: block;
 }
 
 .uiXeny-textArea__container {
@@ -10,7 +13,7 @@
 }
 
 .uiXeny-textArea__container__counter {
-    color: grey;
+    color: var(--uiXeny-placeholder-color);
     position: absolute;
     bottom: 15px;
     right: 15px;
