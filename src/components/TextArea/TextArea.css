@@ -13,7 +13,7 @@
 }
 
 .uiXeny-textArea__container__counter {
-    color: var(--uiXeny-placeholder-color);
+    color: var(--uiXeny-text-subdued-color);
     position: absolute;
     bottom: 15px;
     right: 15px;

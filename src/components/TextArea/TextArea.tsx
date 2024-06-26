@@ -8,7 +8,6 @@ type TTextAreaProps = DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaEleme
 export const TextArea = ({children, ...props}: TTextAreaProps) => {
     let classNameArr = ["uiXeny-textArea uiXeny-input uiXeny-input--basicInput"];
 
-    // let count = 0;
     const textAreaRef = useRef<HTMLTextAreaElement>(null);
     const [textAreaLen, setTextAreaLen] = useState<number | undefined>(0);
     props.className && classNameArr.push(props.className);
