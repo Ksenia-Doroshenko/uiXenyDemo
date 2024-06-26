@@ -5,8 +5,8 @@
     cursor: pointer;
     box-shadow: var(--uiXeny-box-shadow-button);
     transition-duration: var(--uiXeny-transition-time);
-    /*margin: 8px;*/
     width: fit-content;
+    box-sizing: border-box;
 }
 
 .uiXeny-button:active {
@@ -23,9 +23,19 @@
     color: var(--uiXeny-hover-color);
 }
 
+.uiXeny-button--default:hover .uiXeny-icon:hover svg path,
+.uiXeny-button--default:hover svg path{
+    stroke: var(--uiXeny-svg-hover-color);
+}
+
 .uiXeny-button--default:active {
     border-color: var(--uiXeny-active-checked-color);
     color: var(--uiXeny-active-checked-color);
+}
+
+.uiXeny-button--default:active:hover .uiXeny-icon svg path,
+.uiXeny-button--default:active:hover svg path {
+    stroke: var(--uiXeny-svg-hover-color);
 }
 
 .uiXeny-button:focus-visible {
@@ -74,3 +84,242 @@
     padding: 8px 22px;
     font-size: large;
 }
+
+/*danger*/
+.uiXeny-button--default--danger {
+    color: var(--uiXeny-danger-color);
+    border-color: var(--uiXeny-danger-color);
+}
+
+.uiXeny-button--default--danger .uiXeny-icon svg path,
+.uiXeny-button--default--danger svg path{
+    stroke: var(--uiXeny-danger-color);
+}
+
+.uiXeny-button--default--danger:hover .uiXeny-icon:hover svg path,
+.uiXeny-button--default--danger:hover svg path{
+    stroke: var(--uiXeny-danger-hover-color);
+}
+
+.uiXeny-button--default--danger:active .uiXeny-icon svg path,
+.uiXeny-button--default--danger:active svg path {
+    stroke: var(--uiXeny-danger-active-color);
+}
+
+.uiXeny-button--default--danger:active:hover .uiXeny-icon svg path,
+.uiXeny-button--default--danger:active:hover svg path {
+    stroke: var(--uiXeny-danger-active-color);
+}
+
+.uiXeny-button--default--danger:hover {
+    border-color: var(--uiXeny-danger-hover-color);
+    color: var(--uiXeny-danger-hover-color);
+}
+
+.uiXeny-button--default--danger:active {
+    color: var(--uiXeny-danger-active-color);
+    border-color: var(--uiXeny-danger-active-color);
+}
+
+.uiXeny-button--default--danger:active, .uiXeny-button--primary--danger:active {
+    box-shadow: var(--uiXeny-box-shadow-event-danger-around-5px);
+}
+
+.uiXeny-button--primary--danger {
+    background-color: var(--uiXeny-danger-color);
+}
+
+.uiXeny-button--primary--danger:hover {
+    background-color: var(--uiXeny-danger-hover-color);
+}
+
+.uiXeny-button--primary--danger:active {
+    background-color: var(--uiXeny-danger-active-color);
+}
+
+.uiXeny-button--primary--danger .uiXeny-icon svg path,
+.uiXeny-button--primary--danger svg path{
+    stroke: white;
+}
+
+.uiXeny-button--primary--danger:hover .uiXeny-icon:hover svg path,
+.uiXeny-button--primary--danger:hover svg path{
+    stroke: white;
+}
+
+.uiXeny-button--primary--danger:active.uiXeny-icon:active svg path,
+.uiXeny-button--primary--danger:active svg path {
+    stroke: white;
+}
+
+.uiXeny-button--link--danger {
+    color: var(--uiXeny-danger-color);
+}
+
+.uiXeny-button--link--danger:hover {
+    color: var(--uiXeny-danger-hover-color);
+}
+
+.uiXeny-button--link--danger:active {
+    color: var(--uiXeny-danger-active-color);
+}
+
+/*warning*/
+.uiXeny-button--default--warning {
+    color: var(--uiXeny-warning-color);
+    border-color: var(--uiXeny-warning-color);
+}
+
+.uiXeny-button--default--warning .uiXeny-icon svg path,
+.uiXeny-button--default--warning svg path {
+    stroke: var(--uiXeny-warning-color);
+}
+
+.uiXeny-button--default--warning:hover .uiXeny-icon:hover svg path,
+.uiXeny-button--default--warning:hover svg path {
+    stroke: var(--uiXeny-warning-hover-color);
+}
+
+.uiXeny-button--default--warning:active .uiXeny-icon svg path,
+.uiXeny-button--default--warning:active svg path {
+    stroke: var(--uiXeny-warning-active-color);
+}
+
+.uiXeny-button--default--warning:active:hover .uiXeny-icon svg path,
+.uiXeny-button--default--warning:active:hover svg path {
+    stroke: var(--uiXeny-warning-active-color);
+}
+
+.uiXeny-button--default--warning:hover {
+    border-color: var(--uiXeny-warning-hover-color);
+    color: var(--uiXeny-warning-hover-color);
+}
+
+.uiXeny-button--default--warning:active {
+    color: var(--uiXeny-warning-active-color);
+    border-color: var(--uiXeny-warning-active-color);
+}
+
+.uiXeny-button--default--warning:active, .uiXeny-button--primary--warning:active {
+    box-shadow: var(--uiXeny-box-shadow-event-warning-around-5px);
+}
+
+.uiXeny-button--primary--warning {
+    background-color: var(--uiXeny-warning-color);
+}
+
+.uiXeny-button--primary--warning:hover {
+    background-color: var(--uiXeny-warning-hover-color);
+}
+
+.uiXeny-button--primary--warning:active {
+    background-color: var(--uiXeny-warning-active-color);
+}
+
+.uiXeny-button--primary--warning .uiXeny-icon svg path,
+.uiXeny-button--primary--warning svg path {
+    stroke: white;
+}
+
+.uiXeny-button--primary--warning:hover .uiXeny-icon:hover svg path,
+.uiXeny-button--primary--warning:hover svg path {
+    stroke: white;
+}
+
+.uiXeny-button--primary--warning:active.uiXeny-icon:active svg path,
+.uiXeny-button--primary--warning:active svg path {
+    stroke: white;
+}
+
+.uiXeny-button--link--warning {
+    color: var(--uiXeny-warning-color);
+}
+
+.uiXeny-button--link--warning:hover {
+    color: var(--uiXeny-warning-hover-color);
+}
+
+.uiXeny-button--link--warning:active {
+    color: var(--uiXeny-warning-active-color);
+}
+
+/* Success */
+.uiXeny-button--default--success {
+    color: var(--uiXeny-success-color);
+    border-color: var(--uiXeny-success-color);
+}
+
+.uiXeny-button--default--success .uiXeny-icon svg path,
+.uiXeny-button--default--success svg path {
+    stroke: var(--uiXeny-success-color);
+}
+
+.uiXeny-button--default--success:hover .uiXeny-icon:hover svg path,
+.uiXeny-button--default--success:hover svg path {
+    stroke: var(--uiXeny-success-hover-color);
+}
+
+.uiXeny-button--default--success:active .uiXeny-icon svg path,
+.uiXeny-button--default--success:active svg path {
+    stroke: var(--uiXeny-success-active-color);
+}
+
+.uiXeny-button--default--success:active:hover .uiXeny-icon svg path,
+.uiXeny-button--default--success:active:hover svg path {
+    stroke: var(--uiXeny-success-active-color);
+}
+
+.uiXeny-button--default--success:hover {
+    border-color: var(--uiXeny-success-hover-color);
+    color: var(--uiXeny-success-hover-color);
+}
+
+.uiXeny-button--default--success:active {
+    color: var(--uiXeny-success-active-color);
+    border-color: var(--uiXeny-success-active-color);
+}
+
+.uiXeny-button--default--success:active, .uiXeny-button--primary--success:active {
+    box-shadow: var(--uiXeny-box-shadow-event-success-around-5px);
+}
+
+.uiXeny-button--primary--success {
+    background-color: var(--uiXeny-success-color);
+}
+
+.uiXeny-button--primary--success:hover {
+    background-color: var(--uiXeny-success-hover-color);
+}
+
+.uiXeny-button--primary--success:active {
+    background-color: var(--uiXeny-success-active-color);
+}
+
+.uiXeny-button--primary--success .uiXeny-icon svg path,
+.uiXeny-button--primary--success svg path {
+    stroke: white;
+}
+
+.uiXeny-button--primary--success:hover .uiXeny-icon:hover svg path,
+.uiXeny-button--primary--success:hover svg path {
+    stroke: white;
+}
+
+.uiXeny-button--primary--success:active.uiXeny-icon:active svg path,
+.uiXeny-button--primary--success:active svg path {
+    stroke: white;
+}
+
+.uiXeny-button--link--success {
+    color: var(--uiXeny-success-color);
+}
+
+.uiXeny-button--link--success:hover {
+    color: var(--uiXeny-success-hover-color);
+}
+
+.uiXeny-button--link--success:active {
+    color: var(--uiXeny-success-active-color);
+}
+
+
