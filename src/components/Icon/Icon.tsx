@@ -303,7 +303,7 @@ const LeftIconSVG: React.FC<{ color: string | undefined, hoverColor: string | un
 
     return (
         <svg width="14" height="23" viewBox="0 0 14 23" fill="none" xmlns="http://www.w3.org/2000/svg" style={combinedStyle}>
-            <path d="M13 1L2 11.5L13 22" stroke="white" stroke-width="2"/>
+            <path d="M13 1L2 11.5L13 22" stroke="white" strokeWidth="2"/>
         </svg>
     );
 };
@@ -366,7 +366,7 @@ const RightArrowSVG: React.FC<{ color: string | undefined, hoverColor: string | 
 
     return (
         <svg width="14" height="23" viewBox="0 0 14 23" fill="none" xmlns="http://www.w3.org/2000/svg" style={combinedStyle}>
-            <path d="M1 1L12 11.5L1 22" stroke="white" stroke-width="2"/>
+            <path d="M1 1L12 11.5L1 22" stroke="white" strokeWidth="2"/>
         </svg>
 
     );
