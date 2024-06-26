@@ -14,6 +14,7 @@
 
 .uiXeny-card:hover {
     box-shadow: var(--uiXeny-box-shadow-float);
+    border: transparent;
 }
 
 .uiXeny-card__head {
@@ -54,10 +55,10 @@
 }
 
 .uiXeny-card__avatar, .uiXeny-card__actions {
-    margin-top: -1px;
-    margin-bottom: -1px;
-    margin-inline-start: -1px;
-    margin-inline-end: -1px;
+    /*margin-top: -1px;*/
+    /*margin-bottom: -1px;*/
+    /*margin-inline-start: -1px;*/
+    /*margin-inline-end: -1px;*/
 }
 
 .uiXeny-card__avatar img{

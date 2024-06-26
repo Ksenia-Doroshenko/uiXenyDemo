@@ -23,11 +23,11 @@ function App() {
 
     const onOpenNotify = () => {
         console.log('donne')
-        api({ type: 'msg', message: `New notification` });
+        api({type: 'msg', message: `New notification`});
     }
 
     const onClickTheme = () => {
-        changeTheme(currentTheme.name === 'dark' ? 'default': 'dark')
+        changeTheme(currentTheme.name === 'dark' ? 'default' : 'dark')
     }
 
     const onChangeCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -90,9 +90,9 @@ function App() {
                         width: "50%",
                         justifyItems: "center",
                         padding: "20px",
-                        gap: "5px"
+                        gap: "15px"
                     }}>
-                        <Button  buttonType="default" className="dsd" sizeType="small">Default Button</Button>
+                        <Button buttonType="default" className="dsd" sizeType="small">Default Button</Button>
                         <Button buttonType="primary" className="dsdd" sizeType="small">Primary Button</Button>
                         <Button buttonType="link" className="dsdd" sizeType="small">Link Button</Button>
 
@@ -103,6 +103,34 @@ function App() {
                         <Button buttonType="default" className="dsd" sizeType="large">Default Button</Button>
                         <Button buttonType="primary" className="dsdd" sizeType="large">Primary Button</Button>
                         <Button buttonType="link" className="dsdd" sizeType="large">Link Button</Button>
+
+                        <Button buttonType="default" buttonStatus="danger">Default Button</Button>
+                        <Button buttonType="primary" buttonStatus="danger">Primary Button</Button>
+                        <Button buttonType="link" buttonStatus="danger">Link Button</Button>
+
+                        <Button buttonType="default" buttonStatus="warning">Default Button</Button>
+                        <Button buttonType="primary" buttonStatus="warning">Primary Button</Button>
+                        <Button buttonType="link" buttonStatus="warning">Link Button</Button>
+
+                        <Button buttonType="default" buttonStatus="success">Default Button</Button>
+                        <Button buttonType="primary" buttonStatus="success">Primary Button</Button>
+                        <Button buttonType="link" buttonStatus="success">Link Button</Button>
+
+                        <Button.Float buttonType="default" buttonStatus="danger">+</Button.Float>
+                        <Button.Float buttonType="default" buttonStatus="warning">+</Button.Float>
+                        <Button.Float buttonType="default" buttonStatus="success">+</Button.Float>
+
+                        <Button.Float buttonType="default" buttonStatus="danger"><Icon sizeType={"small"}/></Button.Float>
+                        <Button.Float buttonType="default" buttonStatus="warning"><Icon sizeType={"small"}/></Button.Float>
+                        <Button.Float buttonType="default" buttonStatus="success"><Icon sizeType={"small"}/></Button.Float>
+
+                        <Button.Float buttonType="primary" buttonStatus="danger">+</Button.Float>
+                        <Button.Float buttonType="primary" buttonStatus="warning">+</Button.Float>
+                        <Button.Float buttonType="primary" buttonStatus="success">+</Button.Float>
+
+                        <Button.Float buttonType="primary" buttonStatus="danger"><Icon sizeType={"small"}/></Button.Float>
+                        <Button.Float buttonType="primary" buttonStatus="warning"><Icon sizeType={"small"}/></Button.Float>
+                        <Button.Float buttonType="primary" buttonStatus="success"><Icon sizeType={"small"}/></Button.Float>
 
                         <div className="wrap"
                              style={{
@@ -218,23 +246,29 @@ function App() {
                                     ]}></Select>
 
 
-                                    <Accordion accordionData={accordionData} />
+                            <Accordion accordionData={accordionData}/>
 
 
                             <Button buttonType="primary" onClick={() => setIsOpenModal(!isOpenModal)}>Open Modal window
                                 here</Button>
-                            <Modal open={isOpenModal} title={"Модальное окно"} footerActions={[<Button onClick={() => setIsOpenModal(false)} key={1}>Cancel</Button>,
-                                <Button buttonType="primary" key={2}>Ok</Button>]}
+                            <Modal open={isOpenModal} title={"Модальное окно"}
+                                   footerActions={[<Button onClick={() => setIsOpenModal(false)}
+                                                           key={1}>Cancel</Button>,
+                                       <Button buttonType="primary" key={2}>Ok</Button>]}
                                    onClose={() => setIsOpenModal(false)}>
                                 <h2>Заголовок Модального Окна</h2>
-                                <p>Добро пожаловать в модальное окно! Здесь вы можете разместить любое содержимое, которое хотите отобразить пользователям. Ниже приведены некоторые примеры текста:</p>
+                                <p>Добро пожаловать в модальное окно! Здесь вы можете разместить любое содержимое,
+                                    которое хотите отобразить пользователям. Ниже приведены некоторые примеры
+                                    текста:</p>
 
                                 <h3>Примеры Текста:</h3>
 
                                 <ol>
                                     <li>
                                         <p><strong>Абзац:</strong></p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed sem auctor, consectetur metus nec, consequat velit. Nullam sed ligula id nulla malesuada aliquet.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed sem
+                                            auctor, consectetur metus nec, consequat velit. Nullam sed ligula id nulla
+                                            malesuada aliquet.</p>
                                     </li>
                                     <li>
                                         <p><strong>Список:</strong></p>
@@ -246,12 +280,15 @@ function App() {
                                     </li>
                                     <li>
                                         <p><strong>Изображение:</strong></p>
-                                        <img src="https://via.placeholder.com/800x600.png?text=Placeholder+Image" alt="Нейтральная картинка"/>
+                                        <img src="https://via.placeholder.com/800x600.png?text=Placeholder+Image"
+                                             alt="Нейтральная картинка"/>
                                     </li>
                                 </ol>
 
                                 <p><strong>Инструкции:</strong></p>
-                                <p>Вы можете добавлять любой контент сюда в зависимости от ваших потребностей. Не забудьте включить кнопку или элемент закрытия, чтобы пользователи могли закрыть модальное окно.</p>
+                                <p>Вы можете добавлять любой контент сюда в зависимости от ваших потребностей. Не
+                                    забудьте включить кнопку или элемент закрытия, чтобы пользователи могли закрыть
+                                    модальное окно.</p>
 
                             </Modal>
 
@@ -291,7 +328,8 @@ function App() {
 
                             <TextArea rows={15} cols={5} maxLength={100} placeholder="TextArea"></TextArea>
 
-                            <Button.Float buttonType={"primary"} onClick={onClickTheme} style={{position: 'fixed', right: '20px', bottom: '20px'}}>
+                            <Button.Float buttonType={"primary"} onClick={onClickTheme}
+                                          style={{position: 'fixed', right: '20px', bottom: '20px'}}>
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                      aria-hidden="true" role="img" className="iconify iconify--logos" width="35.93"
                                      height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 228">
@@ -302,7 +340,11 @@ function App() {
 
                             <Icon.TextFileOutlined/>
 
-                            <Button.Float onClick={onOpenNotify} style={{position: 'fixed', right: '25px', bottom: '80px'}}><Icon.TextFileOutlined/></Button.Float>
+                            <Button.Float onClick={onOpenNotify} style={{
+                                position: 'fixed',
+                                right: '25px',
+                                bottom: '80px'
+                            }}><Icon.TextFileOutlined/></Button.Float>
 
                             <DatePicker onChange={date => {
                                 console.log(date)

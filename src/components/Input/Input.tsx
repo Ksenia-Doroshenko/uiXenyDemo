@@ -11,13 +11,13 @@ type InputCmp = React.FC<TInputProps<TInputTypes>> & {
     Tel: React.FC<TInputProps<TInputTypes>>;
 };
 export const Input: InputCmp = ({
-                                    type = "basicInput",
+                                    typeStyle = "basicInput",
                                     sizeType = "medium",
                                     ...props
                                 }: TInputProps<TInputTypes>) => {
     const classNameArr = ["uiXeny-input"];
 
-    switch (type) {
+    switch (typeStyle) {
         case "flyInput": {
             classNameArr.push("uiXeny-input--flyInput");
             break;
@@ -52,7 +52,7 @@ export const Input: InputCmp = ({
     props.className && classNameArr.push(props.className);
 
     return (
-        <input {...props} className={classNameArr.join(' ')} type="text"/>
+        <input className={classNameArr.join(' ')} {...props}/>
     )
 }
 
@@ -70,7 +70,7 @@ const closedEye = "<svg width=\"20\" height=\"20\" viewBox=\"0 0 382 150\" fill=
     "</svg>"
 
 const Password: React.FC<TInputProps<TInputTypes>> = ({
-                                                          type = "basicInput",
+                                                          typeStyle = "basicInput",
                                                           sizeType = "medium",
                                                           ...props
                                                       }: TInputProps<TInputTypes>) => {
@@ -93,7 +93,7 @@ const Password: React.FC<TInputProps<TInputTypes>> = ({
         }
     }
 
-    switch (type) {
+    switch (typeStyle) {
         case "flyInput": {
             classNameArr.push("uiXeny-input--flyInput");
             break;
@@ -121,14 +121,14 @@ const Password: React.FC<TInputProps<TInputTypes>> = ({
 };
 
 const Tel: React.FC<TInputProps<TInputTypes>> = ({
-                                                     type = "basicInput",
+                                                     typeStyle = "basicInput",
                                                      sizeType = "medium",
                                                      ...props
                                                  }: TInputProps<TInputTypes>) => {
     const classNameArr = ["uiXeny-tel uiXeny-input"];
     props.className && classNameArr.push(props.className);
 
-    switch (type) {
+    switch (typeStyle) {
         case "flyInput": {
             classNameArr.push("uiXeny-input--flyInput");
             break;
