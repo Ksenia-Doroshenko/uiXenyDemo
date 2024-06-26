@@ -65,6 +65,7 @@
     right: 0;
     top: -20px;
     color: var(--uiXeny-warning-color);
+    z-index: 3;
 }
 
 .uiXeny-select .uiXeny-select__selector_control {

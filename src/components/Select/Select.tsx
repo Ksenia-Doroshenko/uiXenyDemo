@@ -53,7 +53,6 @@ export const Select: React.FC<TSelectProps> = ({
                                                    ...props
                                                }: TSelectProps) => {
     const classNameArr = ["uiXeny-select"];
-
     const [isActive, setIsActive] = useState(false);
     const [selected, setSelected] = useState<TOptionType | null>(null);
     const [selectedOptions, setSelectedOptions] = useState<TOptionType[]>([]);
@@ -252,27 +251,43 @@ export const Select: React.FC<TSelectProps> = ({
         const selectorElement = selectorRef.current;
         const menuElement = menuRef.current;
 
-        if (selectorElement && menuElement) {
-            const selectorRect = selectorElement.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
+        function updateMenuPosition() {
+            if (selectorElement && menuElement) {
+                const selectorRect = selectorElement.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
 
-            // Определяем доступное место ниже селектора
-            const spaceBelowSelector = windowHeight - selectorRect.bottom;
+                // Определяем доступное место ниже селектора
+                const spaceBelowSelector = windowHeight - selectorRect.bottom;
 
-            // Учитываем высоту контента меню
-            const menuContentHeight = menuElement.clientHeight;
+                // Учитываем высоту контента меню
+                const menuContentHeight = menuElement.clientHeight;
 
-            // Если места недостаточно для отображения всего контента снизу,
-            // то меню позиционируется сверху относительно селектора, иначе - снизу
-            if (spaceBelowSelector < menuContentHeight) {
-                setMenuPosition('top');
-                setWarningPosition('bottom');
-            } else {
-                setMenuPosition('bottom');
-                setWarningPosition('top');
+                // Если места недостаточно для отображения всего контента снизу,
+                // то меню позиционируется сверху относительно селектора, иначе - снизу
+                if (spaceBelowSelector < menuContentHeight) {
+                    setMenuPosition('top');
+                    setWarningPosition('bottom');
+                } else {
+                    setMenuPosition('bottom');
+                    setWarningPosition('top');
+                }
             }
         }
-    }, []);
+
+        // Вызываем функцию обновления при первой загрузке и при изменении рефов
+        updateMenuPosition();
+
+        // Добавляем обработчик изменений размеров окна для пересчета позиции меню
+        function handleResize() {
+            updateMenuPosition();
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [selectorRef.current, menuRef.current]);
 
     function contains(arr: TOptionType[], elem: TOptionType | null): boolean {
         return arr.find((el: TOptionType) => el === elem) !== undefined;
@@ -352,7 +367,7 @@ export const Select: React.FC<TSelectProps> = ({
                     <div className={"uiXeny-select__selector_control"}>
                         {props.maxSelect && <div className="uiXeny-select__selector_control__selection_counter">
                             <span> {selectedOptions.length}/{props.maxSelect}</span></div>}
-                        {isActive ? <Icon.DownOutlined sizeType={"small"}/> : <Icon.UpOutlined sizeType={"small"}/>}
+                        {!isActive ? <Icon.DownOutlined sizeType={"small"}/> : <Icon.UpOutlined sizeType={"small"}/>}
                     </div>
                 </div>
 
@@ -371,7 +386,7 @@ export const Select: React.FC<TSelectProps> = ({
                                              && !contains(selectedOptions, option)) ? " uiXeny-select__item--disabled" :
                                              (!props.multipleSelect ?
                                                      (option === selected ? " uiXeny-select__item--selected" : "")
-                                                     : (contains(selectedOptions, option) === true ? " uiXeny-select__item--selected" : "")
+                                                     : (contains(selectedOptions, option) ? " uiXeny-select__item--selected" : "")
                                              )
                                      )
                                  }
