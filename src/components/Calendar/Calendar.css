@@ -7,6 +7,7 @@
   border: none;
   padding: 0;
   outline: var(--uiXeny-border-1px);
+  z-index: 7;
 }
 
 .calendar:focus{
@@ -16,7 +17,6 @@
 .calendar__header {
   position: relative;
   border-radius: 5px 5px 0 0;
-  /*background-color: var(--uiXeny-secondary-color);*/
   color: var(--uiXeny-text-color);
   padding: 10px;
   display: flex;
@@ -60,7 +60,6 @@
   color: var(--color-text);
   text-align: center;
   display: grid;
-  text-align: center;
   align-items: center;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: 1fr;
@@ -69,7 +68,7 @@
 
 .calendar__day {
   border-radius: 5px;
-  padding: 5.5px 0px;
+  padding: 6px 0;
   cursor: pointer;
 }
 
@@ -78,14 +77,14 @@
 }
 
 .calendar__additional__day {
-  padding: 5.5px;
+  padding: 6px;
   font-weight: 300;
   cursor: pointer;
   color: var(--color-placeholder);
 }
 
 .calendar__pick__item {
-  padding: 9px 0px;
+  padding: 9px 0;
   display: flex;
   justify-content: center;
   align-items: center;
