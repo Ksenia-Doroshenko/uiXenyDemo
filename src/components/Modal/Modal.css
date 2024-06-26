@@ -15,7 +15,7 @@
 
 .uiXeny-modal_wrapper__body {
     max-width: 600px;
-    max-height: 750px;
+    max-height: 800px;
     min-width: 300px;
     width: 50%;
     /*min-height: 300px;*/
@@ -33,7 +33,7 @@
     justify-self: center;
     align-self: center;
     flex-direction: column;
-    z-index: 2;
+    z-index: 6;
     box-sizing: border-box;
 }
 
@@ -87,7 +87,7 @@
     width: 100%;
     display: flex;
     align-items: baseline;
-    padding-top: 15px;
+    padding-top: 20px;
     gap: 15px;
     justify-content: right;
 }
