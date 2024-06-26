@@ -1,10 +1,16 @@
 .uiXeny-float-button {
-    padding: 6px 6px;
+    padding: 6px;
     min-width: 40px;
     min-height: 40px;
     box-shadow: var(--uiXeny-box-shadow-float);
     border-color: transparent;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }
+
+
 .uiXeny-float-button:hover {
     border-color: transparent;
     transform: translateY(-2px);
@@ -15,8 +21,16 @@
     border-color: transparent;
 }
 
-.uiXeny-float-button--primary:active {
-    background-color: var(--uiXeny-hover-color);
+.uiXeny-float-button--danger:active {
+    box-shadow: var(--uiXeny-box-shadow-float-active-danger);
+}
+
+.uiXeny-float-button--success:active {
+    box-shadow: var(--uiXeny-box-shadow-float-active-success);
+}
+
+.uiXeny-float-button--warning:active {
+    box-shadow: var(--uiXeny-box-shadow-float-active-warning);
 }
 
 .uiXeny-float-button:focus-visible{
