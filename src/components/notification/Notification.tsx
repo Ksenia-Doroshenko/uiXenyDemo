@@ -1,16 +1,22 @@
 import React, {useEffect} from 'react';
 
 import './index.css';
+import Icon from "../Icon/Icon";
 
 const Notification = ({
                           open,
                           close,
-                          message
+                          message,
+                          last,
+                          onClickRemove
                       }: {
     open: boolean;
     close: boolean;
     message: string | undefined;
+    last: boolean;
+    onClickRemove?: () => void
 }) => {
+    console.log(close)
     useEffect(() => {
         const actionAfterTimeout = () => {
             console.log('close');
@@ -26,11 +32,13 @@ const Notification = ({
 
     return (
         <div
-            className={`notification_wrapper ${open ? 'notification_wrapper__show--rt' : ''} ${
+            className={`notification_wrapper ${last ? 'notification_wrapper__show--rt' : ''} ${
                 close ? 'notification_wrapper__hide--rt' : ''
             }`}
         >
             {message}
+            <div className={'notification_wrapper__close'} style={{transform: 'scale(0.8)'}} onClick={onClickRemove}>
+                <Icon.CloseOutlined/></div>
         </div>
     );
 };

@@ -29,7 +29,7 @@
 
 .notification_wrapper__close{
     position: absolute;
-    top: 0;
+    top: 5px;
     right: 5px;
     cursor: pointer;
 }

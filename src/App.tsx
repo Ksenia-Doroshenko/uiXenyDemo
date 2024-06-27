@@ -14,6 +14,7 @@ import {useTheme} from "./hooks/useTheme";
 import DatePicker from "./components/DatePicker/DatePicker";
 import Accordion from "./components/Accordion/Accordion";
 import {useNotify} from "./components/notification/NotificationsHolder";
+import List from "./components/List/List";
 
 
 function App() {
@@ -104,33 +105,39 @@ function App() {
                         <Button buttonType="primary" className="dsdd" sizeType="large">Primary Button</Button>
                         <Button buttonType="link" className="dsdd" sizeType="large">Link Button</Button>
 
-                        <Button buttonType="default" buttonStatus="danger">Default Button</Button>
-                        <Button buttonType="primary" buttonStatus="danger">Primary Button</Button>
-                        <Button buttonType="link" buttonStatus="danger">Link Button</Button>
+                        <Button buttonType="default" buttonStatus="danger">Default Button danger</Button>
+                        <Button buttonType="primary" buttonStatus="danger">Primary Button danger</Button>
+                        <Button buttonType="link" buttonStatus="danger">Link Button danger</Button>
 
-                        <Button buttonType="default" buttonStatus="warning">Default Button</Button>
-                        <Button buttonType="primary" buttonStatus="warning">Primary Button</Button>
-                        <Button buttonType="link" buttonStatus="warning">Link Button</Button>
+                        <Button buttonType="default" buttonStatus="warning">Default Button warning</Button>
+                        <Button buttonType="primary" buttonStatus="warning">Primary Button warning</Button>
+                        <Button buttonType="link" buttonStatus="warning">Link Button warning</Button>
 
-                        <Button buttonType="default" buttonStatus="success">Default Button</Button>
-                        <Button buttonType="primary" buttonStatus="success">Primary Button</Button>
-                        <Button buttonType="link" buttonStatus="success">Link Button</Button>
+                        <Button buttonType="default" buttonStatus="success">Default Button success</Button>
+                        <Button buttonType="primary" buttonStatus="success">Primary Button success</Button>
+                        <Button buttonType="link" buttonStatus="success">Link Button success</Button>
 
                         <Button.Float buttonType="default" buttonStatus="danger">+</Button.Float>
                         <Button.Float buttonType="default" buttonStatus="warning">+</Button.Float>
                         <Button.Float buttonType="default" buttonStatus="success">+</Button.Float>
 
-                        <Button.Float buttonType="default" buttonStatus="danger"><Icon sizeType={"small"}/></Button.Float>
-                        <Button.Float buttonType="default" buttonStatus="warning"><Icon sizeType={"small"}/></Button.Float>
-                        <Button.Float buttonType="default" buttonStatus="success"><Icon sizeType={"small"}/></Button.Float>
+                        <Button.Float buttonType="default" buttonStatus="danger"><Icon
+                            sizeType={"small"}/></Button.Float>
+                        <Button.Float buttonType="default" buttonStatus="warning"><Icon
+                            sizeType={"small"}/></Button.Float>
+                        <Button.Float buttonType="default" buttonStatus="success"><Icon
+                            sizeType={"small"}/></Button.Float>
 
                         <Button.Float buttonType="primary" buttonStatus="danger">+</Button.Float>
                         <Button.Float buttonType="primary" buttonStatus="warning">+</Button.Float>
                         <Button.Float buttonType="primary" buttonStatus="success">+</Button.Float>
 
-                        <Button.Float buttonType="primary" buttonStatus="danger"><Icon sizeType={"small"}/></Button.Float>
-                        <Button.Float buttonType="primary" buttonStatus="warning"><Icon sizeType={"small"}/></Button.Float>
-                        <Button.Float buttonType="primary" buttonStatus="success"><Icon sizeType={"small"}/></Button.Float>
+                        <Button.Float buttonType="primary" buttonStatus="danger"><Icon
+                            sizeType={"small"}/></Button.Float>
+                        <Button.Float buttonType="primary" buttonStatus="warning"><Icon
+                            sizeType={"small"}/></Button.Float>
+                        <Button.Float buttonType="primary" buttonStatus="success"><Icon
+                            sizeType={"small"}/></Button.Float>
 
                         <div className="wrap"
                              style={{
@@ -142,18 +149,20 @@ function App() {
 
                             <p style={{fontFamily: "sans-serif", fontSize: "32px", fontWeight: "bold"}}>Инпуты</p>
 
-                            <Input type="basicInput" sizeType="small" placeholder="basicInput sizeSmall"
+                            <Input typeStyle="basicInput" sizeType="small" placeholder="basicInput sizeSmall"
                                    required></Input>
-                            <Input type="basicInput" placeholder="basicInput sizeMedium"></Input>
-                            <Input type="basicInput" sizeType="large" placeholder="basicInput sizeLarge"></Input>
+                            <Input typeStyle="basicInput" placeholder="basicInput sizeMedium"></Input>
+                            <Input typeStyle="basicInput" sizeType="large" placeholder="basicInput sizeLarge"></Input>
                             <br></br>
-                            <Input type="underlined" sizeType="small" placeholder="underlined Input sizeMedium"></Input>
-                            <Input type="underlined" sizeType="medium"
+                            <Input typeStyle="underlined" sizeType="small"
                                    placeholder="underlined Input sizeMedium"></Input>
-                            <Input type="underlined" sizeType="large" placeholder="underlined Input sizeMedium"></Input>
+                            <Input typeStyle="underlined" sizeType="medium"
+                                   placeholder="underlined Input sizeMedium"></Input>
+                            <Input typeStyle="underlined" sizeType="large"
+                                   placeholder="underlined Input sizeMedium"></Input>
 
                             <Input.Password/>
-                            <Input.Password type={"underlined"}></Input.Password>
+                            <Input.Password typeStyle={"underlined"}></Input.Password>
 
                             <Input.Tel></Input.Tel>
                         </div>
@@ -184,7 +193,6 @@ function App() {
                                 checked</CheckBox>
                             <CheckBox type="checkmark--filled" defaultChecked={true} disabled={true}>CheckBox--checkmark--filled
                                 checked disabled</CheckBox>
-                            <CheckBox checked={isChecked} onChange={onChangeCheckbox}>MILK</CheckBox>
                             <br/>
                             <div style={{display: "flex", width: "100%", justifyItems: "left"}}>
                                 <div style={{display: "flex", width: "100%", justifyItems: "left"}}>
@@ -292,7 +300,7 @@ function App() {
 
                             </Modal>
 
-                            <Icon.CloseOutlined color={"red"} hoverColor={"blue"}/>
+                            {/*<Icon.CloseOutlined color={"red"} hoverColor={"blue"}/>*/}
 
                             <Card title="Title"
                                   actions={[<Icon.TextFileOutlined key={1}/>, <Icon.TextFileOutlined key={2}/>,
@@ -338,8 +346,6 @@ function App() {
                                 </svg>
                             </Button.Float>
 
-                            <Icon.TextFileOutlined/>
-
                             <Button.Float onClick={onOpenNotify} style={{
                                 position: 'fixed',
                                 right: '25px',
@@ -349,7 +355,13 @@ function App() {
                             <DatePicker onChange={date => {
                                 console.log(date)
                             }}/>
-
+                            <List options={[{
+                                name: "List Component: Item 1",
+                                description: "You can add description of each Item"
+                            },
+                                {name: "Item 2", description: "You can add description of each Item"},
+                                {name: "Item 3", description: "You can add description of each Item"},
+                                {name: "Item 4", description: "You can add description of each Item"}]}></List>
 
                         </div>
 
