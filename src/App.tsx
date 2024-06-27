@@ -12,12 +12,20 @@ import Select from "./components/Select/Select";
 import Modal from "./components/Modal/Modal";
 import {useTheme} from "./hooks/useTheme";
 import DatePicker from "./components/DatePicker/DatePicker";
+import Accordion from "./components/Accordion/Accordion";
+import {useNotify} from "./components/notification/NotificationsHolder";
 
 
 function App() {
     const [isChecked, setChecked] = useState(false);
     const {currentTheme, changeTheme} = useTheme();
-    console.log(currentTheme);
+    const [api, context] = useNotify();
+
+    const onOpenNotify = () => {
+        console.log('donne')
+        api({ type: 'msg', message: `New notification` });
+    }
+
     const onClickTheme = () => {
         changeTheme(currentTheme.name === 'dark' ? 'default': 'dark')
     }
@@ -27,6 +35,7 @@ function App() {
     }
 
     function onChangeSelect(value: string | number) {
+        console.log('app');
         console.log(value);
     }
 
@@ -38,15 +47,33 @@ function App() {
         console.log("blurred select");
     }
 
+    const accordionData = [
+        {
+            heading: "Header 1",
+            content:
+                "Non odit magnam dolorum. Et odio et maxime consequuntur provident. Error eaque est dolor et qui. Ex odit doloremque consequatur quis. Eaque et pariatur dolores. Magni in quasi dolor repudiandae explicabo.",
+        },
+        {
+            heading: "Header 2",
+            content:
+                "Quos quam ipsam consequatur consequatur et distinctio. Facere vel ut dolorem. Quam quo neque quos voluptates cupiditate sit quae.",
+        },
+        {
+            heading: "Header 3",
+            content:
+                "Vel et quam reprehenderit velit. Possimus accusamus eos esse vero quo modi voluptas hic. Quia illo quisquam vel quis qui. Autem labore aut incidunt. Eius non voluptatem et laboriosam in.",
+        },
+    ];
+
     const [isOpenModal, setIsOpenModal] = useState(false);
 
     return (
         <>
             <ThemeProvider>
-
                 <div className={'light-theme'}
 
                      style={{display: "grid", justifyItems: "center", padding: "20px", fontFamily: "sans-serif"}}>
+                    {context}
 
                     <p style={{
                         textAlign: "center",
@@ -170,6 +197,30 @@ function App() {
                                         {value: 'disabled', label: 'Disabled', disabled: true},
                                     ]}></Select>
 
+                            <Select placeholder="Select uiXeny" onChange={onChangeSelect}
+                                    onFocus={onFocusSelect}
+                                    onBlur={onBlurSelect}
+                                    options={[
+                                        {value: 'jack', label: 'Jack'},
+                                        {value: 'lucy', label: 'Lucy'},
+                                        {value: 'yiminghe', label: 'Yiminghe'},
+                                        {value: 'alex', label: 'Alex'},
+                                        {value: 'sophia', label: 'Sophia'},
+                                        {value: 'liam', label: 'Liam'},
+                                        {value: 'olivia', label: 'Olivia'},
+                                        {value: 'william', label: 'William'},
+                                        {value: 'emma', label: 'Emma'},
+                                        {value: 'noah', label: 'Noah'},
+                                        {value: 'ava', label: 'Ava'},
+                                        {value: 'jacob', label: 'Jacob'},
+                                        {value: 'mia', label: 'Mia'},
+                                        {value: 'disabled', label: 'Disabled', disabled: true},
+                                    ]}></Select>
+
+
+                                    <Accordion accordionData={accordionData} />
+
+
                             <Button buttonType="primary" onClick={() => setIsOpenModal(!isOpenModal)}>Open Modal window
                                 here</Button>
                             <Modal open={isOpenModal} title={"Модальное окно"} footerActions={[<Button onClick={() => setIsOpenModal(false)} key={1}>Cancel</Button>,
@@ -212,7 +263,7 @@ function App() {
                                   style={{width: 300}}
                                   extra={<a href="#">More</a>}
                                   avatar={<img
-                                      src={"https://sun9-13.userapi.com/impg/Whb89mqBKvrFOcEJSv1tSxf0a0PslcdOjtvbxg/6icsRB-byDg.jpg?size=2560x1707&quality=96&sign=a316b7b0d237a94ccf407de1a118040f&type=album"}
+                                      src={"https://upload.wikimedia.org/wikipedia/commons/0/0f/Eiffel_Tower_Vertical.JPG"}
                                       alt={"s"}/>}>
                                 <p style={{fontWeight: "bold"}}>title</p>
                                 <p>demo text</p>
@@ -222,7 +273,7 @@ function App() {
                                   actions={[<Icon.TextFileOutlined key={1}/>, <Icon.TextFileOutlined key={2}/>,
                                       <Icon.TextFileOutlined key={3}/>]} extra={<a href="#">More</a>}
                                   avatar={<img alt="example"
-                                               src={"https://sun9-13.userapi.com/impg/Whb89mqBKvrFOcEJSv1tSxf0a0PslcdOjtvbxg/6icsRB-byDg.jpg?size=2560x1707&quality=96&sign=a316b7b0d237a94ccf407de1a118040f&type=album"}/>}></Card>
+                                               src={"https://upload.wikimedia.org/wikipedia/commons/0/0f/Eiffel_Tower_Vertical.JPG"}/>}></Card>
                             <Card style={{width: 300}}
                                   actions={[<Icon.TextFileOutlined key={1}/>, <Icon.TextFileOutlined key={2}/>,
                                       <Icon.TextFileOutlined key={3}/>]} extra={<a href="#">More</a>}
@@ -240,7 +291,7 @@ function App() {
 
                             <TextArea rows={15} cols={5} maxLength={100} placeholder="TextArea"></TextArea>
 
-                            <Button.Float buttonType={"primary"} onClick={onClickTheme}>
+                            <Button.Float buttonType={"primary"} onClick={onClickTheme} style={{position: 'fixed', right: '20px', bottom: '20px'}}>
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                      aria-hidden="true" role="img" className="iconify iconify--logos" width="35.93"
                                      height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 228">
@@ -250,6 +301,8 @@ function App() {
                             </Button.Float>
 
                             <Icon.TextFileOutlined/>
+
+                            <Button.Float onClick={onOpenNotify} style={{position: 'fixed', right: '25px', bottom: '80px'}}><Icon.TextFileOutlined/></Button.Float>
 
                             <DatePicker onChange={date => {
                                 console.log(date)

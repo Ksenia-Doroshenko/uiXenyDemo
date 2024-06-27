@@ -1,0 +1,68 @@
+.notofication_holder{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    /*width: 100%;*/
+    /*height: 100%;*/
+    z-index: 1;
+    gap: 10px;
+    /*pointer-events: none;*/
+    align-items: flex-end;
+}
+
+.notification_wrapper{
+    right: 0;
+    background-color: var(--uiXeny-background-color-white);
+    color: var(--uiXeny-text-color);
+    border: var(--uiXeny-border-1px);
+    border-radius: var(--uiXeny-border-radius);
+    padding: 10px;
+    transition: 0.2s;
+    width: fit-content;
+    min-width: 200px;
+    position: relative;
+    /*opacity: 0;*/
+    /*transform: translateX(120%);*/
+}
+
+.notification_wrapper__close{
+    position: absolute;
+    top: 0;
+    right: 5px;
+    cursor: pointer;
+}
+
+
+
+.notification_wrapper__show--rt {
+    animation: show_notify_rt 0.2s ease-in forwards;
+}
+
+.notification_wrapper__hide--rt {
+    animation: hide_notify_rt 0.2s ease-out forwards;
+}
+
+
+@keyframes show_notify_rt {
+    from{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes hide_notify_rt {
+    from{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+    to{
+        opacity: 0;
+        transform: translateX(120%);
+    }
+}

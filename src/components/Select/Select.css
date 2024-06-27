@@ -57,7 +57,7 @@
     cursor: default;
 }
 .uiXeny-select .uiXeny-select__selector .uiXeny-select__selector_items .uiXeny-select__item--selected_single {
-    margin: 15px 0 15px 20px;
+    margin: 7px 0 7px 20px;
 }
 
 .uiXeny-select .uiXeny-select__warning {
@@ -98,6 +98,7 @@
     border-radius: var(--uiXeny-border-radius);
     overflow: auto;
     max-height: 250px;
+    z-index: 1;
 }
 
 .uiXeny-select__item--highlighted {
