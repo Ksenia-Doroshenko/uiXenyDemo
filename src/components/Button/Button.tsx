@@ -11,8 +11,7 @@ type ButtonCmp = React.FC<TButtonProps> & {
 
 type TButtonProps = DetailedHTMLProps<
     ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-> & {
+    HTMLButtonElement> & {
     buttonType?: TButtonTypes;
     buttonStatus?: TButtonStatuses;
     children?: React.ReactElement | string;

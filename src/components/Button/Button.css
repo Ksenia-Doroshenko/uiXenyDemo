@@ -164,6 +164,26 @@
     color: var(--uiXeny-danger-active-color);
 }
 
+.uiXeny-button--link--danger .uiXeny-icon svg path,
+.uiXeny-button--link--danger svg path{
+    stroke: var(--uiXeny-danger-color);
+}
+
+.uiXeny-button--link--danger:hover .uiXeny-icon:hover svg path,
+.uiXeny-button--link--danger:hover svg path{
+    stroke: var(--uiXeny-danger-hover-color);
+}
+
+.uiXeny-button--link--danger:active .uiXeny-icon svg path,
+.uiXeny-button--link--danger:active svg path {
+    stroke: var(--uiXeny-danger-active-color);
+}
+
+.uiXeny-button--link--danger:active:hover .uiXeny-icon svg path,
+.uiXeny-button--link--danger:active:hover svg path {
+    stroke: var(--uiXeny-danger-active-color);
+}
+
 /*warning*/
 .uiXeny-button--default--warning {
     color: var(--uiXeny-warning-color);
@@ -243,6 +263,26 @@
     color: var(--uiXeny-warning-active-color);
 }
 
+.uiXeny-button--link--warning .uiXeny-icon svg path,
+.uiXeny-button--link--warning svg path {
+    stroke: var(--uiXeny-warning-color);
+}
+
+.uiXeny-button--link--warning:hover .uiXeny-icon:hover svg path,
+.uiXeny-button--link--warning:hover svg path {
+    stroke: var(--uiXeny-warning-hover-color);
+}
+
+.uiXeny-button--link--warning:active .uiXeny-icon svg path,
+.uiXeny-button--link--warning:active svg path {
+    stroke: var(--uiXeny-warning-active-color);
+}
+
+.uiXeny-button--link--warning:active:hover .uiXeny-icon svg path,
+.uiXeny-button--link--warning:active:hover svg path {
+    stroke: var(--uiXeny-warning-active-color);
+}
+
 /* Success */
 .uiXeny-button--default--success {
     color: var(--uiXeny-success-color);
@@ -320,6 +360,26 @@
 
 .uiXeny-button--link--success:active {
     color: var(--uiXeny-success-active-color);
+}
+
+.uiXeny-button--link--success .uiXeny-icon svg path,
+.uiXeny-button--link--success svg path {
+    stroke: var(--uiXeny-success-color);
+}
+
+.uiXeny-button--link--success:hover .uiXeny-icon:hover svg path,
+.uiXeny-button--link--success:hover svg path {
+    stroke: var(--uiXeny-success-hover-color);
+}
+
+.uiXeny-button--link--success:active .uiXeny-icon svg path,
+.uiXeny-button--link--success:active svg path {
+    stroke: var(--uiXeny-success-active-color);
+}
+
+.uiXeny-button--link--success:active:hover .uiXeny-icon svg path,
+.uiXeny-button--link--success:active:hover svg path {
+    stroke: var(--uiXeny-success-active-color);
 }
 
 
